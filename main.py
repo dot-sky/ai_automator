@@ -6,6 +6,7 @@ from crew.staff_analyst import create_analyst, create_analysis_task
 from crew.image_verifier import create_image_verifier, create_image_verification_task
 from config.settings import STAFF_HTML_FILE
 from crewai import Crew, Process
+import scripts.automator_live
 import re
 
 def main():
@@ -66,3 +67,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    scripts.automator_live.automator_live.automation_script()
+
