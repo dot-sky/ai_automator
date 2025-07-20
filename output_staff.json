@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Kurt Lorey",
+    "department": "Commercial Vehicle",
+    "position": "Commercial Vehicle Manager",
+    "phone": "812-309-0259",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/144573-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8xNDQ1NzMta3VydF9sb3JleS5qcGc=",
+    "photo_verified": true
+  },
+  {
+    "name": "Chris Jesop",
+    "department": "Sales",
+    "position": "Sales Manager",
+    "phone": "812-604-0521",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3320201-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWRlcy8zMzIwMjAxLWNocmlzamVzb3BfMjAyNC5qcGc=",
+    "photo_verified": true
+  },
+  {
+    "name": "Aaron Vaal",
+    "department": "Commercial Vehicle",
+    "position": "Commercial Vehicle Sales",
+    "phone": "812-309-0263",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918341-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzQxLWltZ180MTk1LmpwZw==",
+    "photo_verified": true
+  },
+  {
+    "name": "Chris Hopf",
+    "department": "Commercial Vehicle",
+    "position": "Commercial Vehicle Sales",
+    "phone": "812-309-0521",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918345-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzQ1LWltZ180MTk0LmpwZw==",
+    "photo_verified": true
+  },
+  {
+    "name": "Josh Wendholt",
+    "department": "Commercial Vehicle",
+    "position": "Commercial Vehicle Sales",
+    "phone": "812-309-0261",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918329-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzI5LWltZ180MTk3LWNvcHkuanBn",
+    "photo_verified": true
+  },
+  {
+    "name": "Luke Gunselman",
+    "department": "Commercial Vehicle",
+    "position": "Commercial Vehicle Sales",
+    "phone": "812-639-6373",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918324-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzI0LWltZ180MTk5LWNvcHkuanBn",
+    "photo_verified": true
+  },
+  {
+    "name": "Kyla Uebelhor",
+    "department": "Business",
+    "position": "Business Director",
+    "phone": "812-482-2222",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3320207-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zMzIwMjA3LWt5bGF1ZWJlbGhvcl8yMDI0LmpwZw==",
+    "photo_verified": true
+  }
+]
