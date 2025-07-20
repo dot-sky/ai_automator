@@ -1,0 +1,230 @@
+<div class="meet_our_staff_wrap cols_3">
+
+	
+		<div class="meet_our_staff_dept_wrap thm-transparent_75_white-bg_color">
+			<h2 class="thm-hglight-bg_color thm-inverse_text_color fl_c">Meet Our Main Staff</h2>
+				<div class="employee_wrapper">			
+			<div class="employee_wrap_staff fl_l">
+				<div class="staff_img_wrap">
+				<img class="dynamic_image img-responsive cld-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-echo="https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/144573-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8xNDQ1NzMta3VydF9sb3JleS5qcGc=" alt=" Commercial Vehicle Manager Kurt  Lorey">
+</div>
+				<div class="staff_scalling_height"></div>
+	
+				<div class="staff_hover thm-transparent_75_white-bg_color">
+					<div class="staff_hover_close">X</div>
+					<div class="staff_hover_content">Phone 812-309-0259</div>
+				</div>
+
+								
+				<div class="staff_content thm-transparent_70_dark-bg_color thm-inverse_text_color">
+					<div class="employee_title_staff"><span> Commercial Vehicle Manager</span></div>
+					<div class="employee_name_staff"><span>Kurt  Lorey</span></div>
+					
+					<div class="employee_link_wrapper">
+												
+						<a class="employee_link_staff modal_link thm-hglight-bg_color thm-med_dark-bg_color-hover" href="/email-message/s:26120/" rel="26120" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_email.png" alt="Email this staff member"></a>
+						
+												
+												
+						<div class="employee_link_staff employee_info thm-hglight-bg_color thm-med_dark-bg_color-hover" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_info.png" alt="More Information"></div>
+						
+						
+					</div>
+					
+														
+				</div>
+			</div>		
+						
+			<div class="employee_wrap_staff fl_l">
+				<div class="staff_img_wrap">
+				<img class="dynamic_image img-responsive cld-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-echo="https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3320201-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zMzIwMjAxLWNocmlzamVzb3BfMjAyNC5qcGc=" alt="Sales Manager Chris  Jesop">
+</div>
+				<div class="staff_scalling_height"></div>
+	
+				<div class="staff_hover thm-transparent_75_white-bg_color">
+					<div class="staff_hover_close">X</div>
+					<div class="staff_hover_content">Phone 812-604-0521</div>
+				</div>
+
+								
+				<div class="staff_content thm-transparent_70_dark-bg_color thm-inverse_text_color">
+					<div class="employee_title_staff"><span>Sales Manager</span></div>
+					<div class="employee_name_staff"><span>Chris  Jesop</span></div>
+					
+					<div class="employee_link_wrapper">
+												
+						<a class="employee_link_staff modal_link thm-hglight-bg_color thm-med_dark-bg_color-hover" href="/email-message/s:132488/" rel="132488" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_email.png" alt="Email this staff member"></a>
+						
+												
+												
+						<div class="employee_link_staff employee_info thm-hglight-bg_color thm-med_dark-bg_color-hover" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_info.png" alt="More Information"></div>
+						
+						
+					</div>
+					
+														
+				</div>
+			</div>		
+						
+			<div class="employee_wrap_staff fl_l">
+				<div class="staff_img_wrap">
+				<img class="dynamic_image img-responsive cld-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-echo="https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918341-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzQxLWltZ180MTk1LmpwZw==" alt="Commercial Vehicle Sales Aaron  Vaal">
+</div>
+				<div class="staff_scalling_height"></div>
+	
+				<div class="staff_hover thm-transparent_75_white-bg_color">
+					<div class="staff_hover_close">X</div>
+					<div class="staff_hover_content">Phone 812-309-0263</div>
+				</div>
+
+								
+				<div class="staff_content thm-transparent_70_dark-bg_color thm-inverse_text_color">
+					<div class="employee_title_staff"><span>Commercial Vehicle Sales</span></div>
+					<div class="employee_name_staff"><span>Aaron  Vaal</span></div>
+					
+					<div class="employee_link_wrapper">
+												
+						<a class="employee_link_staff modal_link thm-hglight-bg_color thm-med_dark-bg_color-hover" href="/email-message/s:26123/" rel="26123" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_email.png" alt="Email this staff member"></a>
+						
+												
+												
+						<div class="employee_link_staff employee_info thm-hglight-bg_color thm-med_dark-bg_color-hover" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_info.png" alt="More Information"></div>
+						
+						
+					</div>
+					
+														
+				</div>
+			</div>		
+						
+			<div class="employee_wrap_staff fl_l">
+				<div class="staff_img_wrap">
+				<img class="dynamic_image img-responsive cld-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-echo="https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918345-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzQ1LWltZ180MTk0LmpwZw==" alt="Commercial Vehicle Sales Chris  Hopf">
+</div>
+				<div class="staff_scalling_height"></div>
+	
+				<div class="staff_hover thm-transparent_75_white-bg_color">
+					<div class="staff_hover_close">X</div>
+					<div class="staff_hover_content">Phone 812-309-0521</div>
+				</div>
+
+								
+				<div class="staff_content thm-transparent_70_dark-bg_color thm-inverse_text_color">
+					<div class="employee_title_staff"><span>Commercial Vehicle Sales</span></div>
+					<div class="employee_name_staff"><span>Chris  Hopf</span></div>
+					
+					<div class="employee_link_wrapper">
+												
+						<a class="employee_link_staff modal_link thm-hglight-bg_color thm-med_dark-bg_color-hover" href="/email-message/s:26121/" rel="26121" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_email.png" alt="Email this staff member"></a>
+						
+												
+												
+						<div class="employee_link_staff employee_info thm-hglight-bg_color thm-med_dark-bg_color-hover" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_info.png" alt="More Information"></div>
+						
+						
+					</div>
+					
+														
+				</div>
+			</div>		
+						
+			<div class="employee_wrap_staff fl_l">
+				<div class="staff_img_wrap">
+				<img class="dynamic_image img-responsive cld-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-echo="https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918329-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzI5LWltZ180MTk3LWNvcHkuanBn" alt="Commercial Vehicle Sales Josh  Wendholt">
+</div>
+				<div class="staff_scalling_height"></div>
+	
+				<div class="staff_hover thm-transparent_75_white-bg_color">
+					<div class="staff_hover_close">X</div>
+					<div class="staff_hover_content">Phone 812-309-0261</div>
+				</div>
+
+								
+				<div class="staff_content thm-transparent_70_dark-bg_color thm-inverse_text_color">
+					<div class="employee_title_staff"><span>Commercial Vehicle Sales</span></div>
+					<div class="employee_name_staff"><span>Josh  Wendholt</span></div>
+					
+					<div class="employee_link_wrapper">
+												
+						<a class="employee_link_staff modal_link thm-hglight-bg_color thm-med_dark-bg_color-hover" href="/email-message/s:26124/" rel="26124" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_email.png" alt="Email this staff member"></a>
+						
+												
+												
+						<div class="employee_link_staff employee_info thm-hglight-bg_color thm-med_dark-bg_color-hover" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_info.png" alt="More Information"></div>
+						
+						
+					</div>
+					
+														
+				</div>
+			</div>		
+						
+			<div class="employee_wrap_staff fl_l">
+				<div class="staff_img_wrap">
+				<img class="dynamic_image img-responsive cld-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-echo="https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918324-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzI0LWltZ180MTk5LWNvcHkuanBn" alt="Commercial Vehicle Sales Luke  Gunselman">
+</div>
+				<div class="staff_scalling_height"></div>
+	
+				<div class="staff_hover thm-transparent_75_white-bg_color">
+					<div class="staff_hover_close">X</div>
+					<div class="staff_hover_content">Phone 812-639-6373</div>
+				</div>
+
+								
+				<div class="staff_content thm-transparent_70_dark-bg_color thm-inverse_text_color">
+					<div class="employee_title_staff"><span>Commercial Vehicle Sales</span></div>
+					<div class="employee_name_staff"><span>Luke  Gunselman</span></div>
+					
+					<div class="employee_link_wrapper">
+												
+						<a class="employee_link_staff modal_link thm-hglight-bg_color thm-med_dark-bg_color-hover" href="/email-message/s:26125/" rel="26125" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_email.png" alt="Email this staff member"></a>
+						
+												
+												
+						<div class="employee_link_staff employee_info thm-hglight-bg_color thm-med_dark-bg_color-hover" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_info.png" alt="More Information"></div>
+						
+						
+					</div>
+					
+														
+				</div>
+			</div>		
+						
+			<div class="employee_wrap_staff fl_l">
+				<div class="staff_img_wrap">
+				<img class="dynamic_image img-responsive cld-responsive" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-echo="https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3320207-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zMzIwMjA3LWt5bGF1ZWJlbGhvcl8yMDI0LmpwZw==" alt="Business Director Kyla  Uebelhor">
+</div>
+				<div class="staff_scalling_height"></div>
+	
+				<div class="staff_hover thm-transparent_75_white-bg_color">
+					<div class="staff_hover_close">X</div>
+					<div class="staff_hover_content">Phone 812-482-2222</div>
+				</div>
+
+								
+				<div class="staff_content thm-transparent_70_dark-bg_color thm-inverse_text_color">
+					<div class="employee_title_staff"><span>Business Director</span></div>
+					<div class="employee_name_staff"><span>Kyla  Uebelhor</span></div>
+					
+					<div class="employee_link_wrapper">
+												
+						<a class="employee_link_staff modal_link thm-hglight-bg_color thm-med_dark-bg_color-hover" href="/email-message/s:26126/" rel="26126" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_email.png" alt="Email this staff member"></a>
+						
+												
+												
+						<div class="employee_link_staff employee_info thm-hglight-bg_color thm-med_dark-bg_color-hover" tabindex="0"><img src="//cdn.dealereprocess.org/cdn/img/staff/global_staff_info.png" alt="More Information"></div>
+						
+						
+					</div>
+					
+														
+				</div>
+			</div>		
+					
+		<div class="fl_c"></div>
+		
+			
+		</div>
+	</div>
+	<div class="fl_c"></div>
+</div>
