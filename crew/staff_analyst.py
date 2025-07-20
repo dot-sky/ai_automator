@@ -1,12 +1,4 @@
-from crewai import Agent, Task, Crew, Process, LLM
-from config.settings import GEMINI_API_KEY
-
-def get_gemini_llm():
-    return LLM(
-        model='gemini/gemini-2.5-flash',
-        api_key=GEMINI_API_KEY,
-        temperature=0.0
-    )
+from crewai import Agent, Task
 
 def create_analyst(llm):
     return Agent(
@@ -27,9 +19,9 @@ def create_analysis_task(staff_html, analyst):
             "- Name\n"
             "- Department\n"
             "- Position\n"
-            "- Phone (if available else N\A)\n"
+            "- Phone (if available else N\\A)\n"
             "- Email (if available with format xyz@example.com else N/A)\n"
-            "- Biography (if available else N\A)\n"
+            "- Biography (if available else N\\A)\n"
             "- Image link (Full Cloudflare URL taken from the <img> src attribute) else N/A\n"
         ),
         expected_output=(
@@ -38,17 +30,3 @@ def create_analysis_task(staff_html, analyst):
         ),
         agent=analyst
     )
-
-def run_crew(analyst, analysis_task):
-    crew = Crew(
-        agents=[analyst],
-        tasks=[analysis_task],
-        process=Process.sequential,
-        verbose=True
-    )
-    print("Starting the Crew to analyze the staff HTML...")
-    result = crew.kickoff()
-    print("\n\n########################")
-    print("## FINAL RESULT")
-    print("########################\n")
-    print(result)
