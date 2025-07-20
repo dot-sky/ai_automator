@@ -146,7 +146,7 @@ def submit_staff_safe(staff_list, driver, timeout=15):
             print(f"Failed to submit staff member '{staff.get('name', '[Unknown Name]')}': {e}")
 
 def automation_script():        
-    with open("../output_staff.json", "r") as file:
+    with open("/Users/angrysp/Desktop/Mojix/hackaton/output_staff.json", "r") as file:
         staff_data = json.load(file)
 
     DEALER_USER_NAME = 'harganib'
