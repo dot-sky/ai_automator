@@ -1,0 +1,54 @@
+from crewai import Agent, Task, Crew, Process, LLM
+from config.settings import GEMINI_API_KEY
+
+def get_gemini_llm():
+    return LLM(
+        model='gemini/gemini-2.5-flash',
+        api_key=GEMINI_API_KEY,
+        temperature=0.0
+    )
+
+def create_analyst(llm):
+    return Agent(
+        role='Senior Data Analyst',
+        goal='Analyze the provided HTML content.',
+        backstory='You are an expert in finding patterns in HTML code.',
+        verbose=True,
+        allow_delegation=False,
+        llm=llm
+    )
+
+def create_analysis_task(staff_html, analyst):
+    return Task(
+        description=(
+            "Below is the HTML of the main staff container extracted from the R script:\n\n"
+            f"{staff_html}\n\n"
+            "Analyze the received HTML text. For each staff member, extract and organize the following fields in a Markdown list if they are present:\n"
+            "- Name\n"
+            "- Department\n"
+            "- Position\n"
+            "- Phone (if available else N\A)\n"
+            "- Email (if available with format xyz@example.com else N/A)\n"
+            "- Biography (if available else N\A)\n"
+            "- Image link (Full Cloudflare URL taken from the <img> src attribute) else N/A\n"
+        ),
+        expected_output=(
+            "A list in JSON format, where each staff member is represented as an object containing the following fields if present: "
+            "name, department, position, phone, email, biography, image_url."
+        ),
+        agent=analyst
+    )
+
+def run_crew(analyst, analysis_task):
+    crew = Crew(
+        agents=[analyst],
+        tasks=[analysis_task],
+        process=Process.sequential,
+        verbose=True
+    )
+    print("Starting the Crew to analyze the staff HTML...")
+    result = crew.kickoff()
+    print("\n\n########################")
+    print("## FINAL RESULT")
+    print("########################\n")
+    print(result)
