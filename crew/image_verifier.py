@@ -3,7 +3,7 @@ from crewai import Agent, Task
 def create_image_verifier(llm):
     return Agent(
         role='Image Verifier',
-        goal='Verify that the images belong to real people.',
+        goal='Verify that the images belong to real people and are not placeholder images.',
         backstory='You are an expert in identifying human faces in images.',
         verbose=True,
         allow_delegation=False,

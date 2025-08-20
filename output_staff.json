@@ -1,72 +1,380 @@
 [
   {
-    "name": "Kurt Lorey",
-    "department": "Commercial Vehicle",
-    "position": "Commercial Vehicle Manager",
-    "phone": "812-309-0259",
+    "name": "Jason Roberts",
+    "department": "Sales Staff",
+    "position": "President",
+    "phone": "N/A",
     "email": "N/A",
     "biography": "N/A",
-    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/144573-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8xNDQ1NzMta3VydF9sb3JleS5qcGc=",
-    "photo_verified": true
+    "image_url": "/static/dealer-28582/Jason_Roberts.jpg"
   },
   {
-    "name": "Chris Jesop",
-    "department": "Sales",
+    "name": "Jorge Castaneda",
+    "department": "Sales Staff",
+    "position": "Sales Director",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/staff/jorge.jpg"
+  },
+  {
+    "name": "Ruben Ornelas",
+    "department": "Sales Staff",
+    "position": "Finance Director",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Ruben_Ornelas.png"
+  },
+  {
+    "name": "Angela Allard",
+    "department": "Sales Staff",
+    "position": "Finance Manager",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Angela_Allard.png"
+  },
+  {
+    "name": "Waleed Omran",
+    "department": "Sales Staff",
     "position": "Sales Manager",
-    "phone": "812-604-0521",
+    "phone": "N/A",
     "email": "N/A",
     "biography": "N/A",
-    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3320201-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWRlcy8zMzIwMjAxLWNocmlzamVzb3BfMjAyNC5qcGc=",
-    "photo_verified": true
+    "image_url": "/static/dealer-28582/staff/waleed.jpg"
   },
   {
-    "name": "Aaron Vaal",
-    "department": "Commercial Vehicle",
-    "position": "Commercial Vehicle Sales",
-    "phone": "812-309-0263",
+    "name": "Aleksandra Plewa",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
     "email": "N/A",
     "biography": "N/A",
-    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918341-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzQxLWltZ180MTk1LmpwZw==",
-    "photo_verified": true
+    "image_url": "/static/dealer-28582/staff/aleksandra.jpg"
   },
   {
-    "name": "Chris Hopf",
-    "department": "Commercial Vehicle",
-    "position": "Commercial Vehicle Sales",
-    "phone": "812-309-0521",
+    "name": "Carlos Compean",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
     "email": "N/A",
     "biography": "N/A",
-    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918345-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzQ1LWltZ180MTk0LmpwZw==",
-    "photo_verified": true
+    "image_url": "/static/dealer-28582/staff/carlos.jpg"
   },
   {
-    "name": "Josh Wendholt",
-    "department": "Commercial Vehicle",
-    "position": "Commercial Vehicle Sales",
-    "phone": "812-309-0261",
+    "name": "Denzell Vaval",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
     "email": "N/A",
     "biography": "N/A",
-    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918329-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzI5LWltZ180MTk3LWNvcHkuanBn",
-    "photo_verified": true
+    "image_url": "/static/dealer-28582/Denzell_Vaval.png"
   },
   {
-    "name": "Luke Gunselman",
-    "department": "Commercial Vehicle",
-    "position": "Commercial Vehicle Sales",
-    "phone": "812-639-6373",
+    "name": "Eddie Saucedo",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
     "email": "N/A",
     "biography": "N/A",
-    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3918324-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zOTE4MzI0LWltZ180MTk5LWNvcHkuanBn",
-    "photo_verified": true
+    "image_url": "/static/dealer-28582/Eddie_Saucedo.png"
   },
   {
-    "name": "Kyla Uebelhor",
-    "department": "Business",
-    "position": "Business Director",
-    "phone": "812-482-2222",
+    "name": "Jeff Wilson",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
     "email": "N/A",
     "biography": "N/A",
-    "image_url": "https://cloudflareimages.dealereprocess.com/resrc/images/dep_asset,c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_auto/3320207-L2hvbWUvZGVhbGVycy9hc3NldHMvNTA4L2ltYWdlcy8zMzIwMjA3LWt5bGF1ZWJlbGhvcl8yMDI0LmpwZw==",
-    "photo_verified": true
+    "image_url": "/static/dealer-28582/staff/jeff-wilson.jpg"
+  },
+  {
+    "name": "Luciano Francia",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Luciano_Francia.png"
+  },
+  {
+    "name": "Maxwell Harper",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/staff/maxwell.jpg"
+  },
+  {
+    "name": "Steve Harb",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/staff/steve-hard.jpg"
+  },
+  {
+    "name": "Maria Vega",
+    "department": "Sales Staff",
+    "position": "Office Manager",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Maria_Vega.png"
+  },
+  {
+    "name": "Brandi Ramirez",
+    "department": "Sales Staff",
+    "position": "Biller",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Brandi_Ramirez.png"
+  },
+  {
+    "name": "Luna Torres",
+    "department": "Sales Staff",
+    "position": "Accounts Receivable & Payable",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/resources/stafsaa/images/missingStaff.png"
+  },
+  {
+    "name": "Emily Ulloa",
+    "department": "Sales Staff",
+    "position": "Cashier",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Emily_Ulloa.png"
+  },
+  {
+    "name": "Miguel Villicana",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/staff/miguel.jpg"
+  },
+  {
+    "name": "Ray Troupe",
+    "department": "Sales Staff",
+    "position": "Product Specialist",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/staff/ray.jpg"
+  },
+  {
+    "name": "Brandon Santoro",
+    "department": "Sales Staff",
+    "position": "Used Car Manager",
+    "phone": "N/A",
+    "email": "bstanton@advantagedealer.net",
+    "biography": "N/A",
+    "image_url": "/resources/stafsaa/images/missingStaff.png"
+  },
+  {
+    "name": "Ty Smith",
+    "department": "Sales Staff",
+    "position": "Sales Manager",
+    "phone": "3123304633",
+    "email": "tsmith@advantagedealer.net",
+    "biography": "N/A",
+    "image_url": "/resources/stafsaa/images/missingStaff.png"
+  },
+  {
+    "name": "Louie Hatzis",
+    "department": "Service Department",
+    "position": "Service Manager",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/staff/louie.jpg"
+  },
+  {
+    "name": "Tom Analitis",
+    "department": "Service Department",
+    "position": "Service Advisor",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Tom_Analitis.jpg"
+  },
+  {
+    "name": "Yolanda Vasquez",
+    "department": "Service Department",
+    "position": "Service Advisor",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Yolanda_Vasquez.png"
+  },
+  {
+    "name": "Mark Diamantos",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Mark_Diamantos.jpg"
+  },
+  {
+    "name": "Tomasz Dlugusz",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Tomasz_Dlugusz.jpg"
+  },
+  {
+    "name": "Juan Gonzalez",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Juan_Gonzalez.png"
+  },
+  {
+    "name": "Gino Hernandez",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Gino_Hernandez.jpg"
+  },
+  {
+    "name": "Michael Kencaly",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Michael_Kencaly.png"
+  },
+  {
+    "name": "James Kurkul",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/James_Kurkul.png"
+  },
+  {
+    "name": "Bill Simmons",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Bill_Simmons.jpg"
+  },
+  {
+    "name": "Darisc Stachnik",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Darisc_Stachnik.jpg"
+  },
+  {
+    "name": "Rick Zarbock",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Rick_Zarbock.jpg"
+  },
+  {
+    "name": "Nathan Zavala",
+    "department": "Service Department",
+    "position": "Technician",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Nathan_Zavala.png"
+  },
+  {
+    "name": "Maximus Diaz",
+    "department": "Service Department",
+    "position": "CSR",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Maximus_Diaz.png"
+  },
+  {
+    "name": "Freddie Stevenson",
+    "department": "Service Department",
+    "position": "CSR",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Freddie_Stevenson.jpg"
+  },
+  {
+    "name": "Rigo Suarez",
+    "department": "Service Department",
+    "position": "CSR",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Rigo_Suarez.png"
+  },
+  {
+    "name": "Maureen Bearden",
+    "department": "Service Department",
+    "position": "Warranty Administrator",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Maureen_Bearden.png"
+  },
+  {
+    "name": "Amar Khalil",
+    "department": "Service Department",
+    "position": "Service Advisor",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/staff/Amar.jpg"
+  },
+  {
+    "name": "Kevin Wisniewski",
+    "department": "Parts Department",
+    "position": "Parts Manager",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Kevin_Wisniewski.jpg"
+  },
+  {
+    "name": "Douglass Hoffman",
+    "department": "Parts Department",
+    "position": "Parts Specialist",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Douglass_Hoffman.jpg"
+  },
+  {
+    "name": "Victor Zamudio",
+    "department": "Parts Department",
+    "position": "Parts Specialist",
+    "phone": "N/A",
+    "email": "N/A",
+    "biography": "N/A",
+    "image_url": "/static/dealer-28582/Victor_Zamudio.jpg"
   }
 ]

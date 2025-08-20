@@ -1,17 +1,31 @@
-# Load required library
 library(rvest)
 
 # Website URL
-url <- "https://www.uebelhorcommercialtruck.com/meet-our-staff/"
+args <- commandArgs(trailingOnly = TRUE)
+url <- args[1]
+# url <- "https://www.bridgewaternissan.com/staff.aspx"
+cat("Received URL:", url, "\n")
 
 # Read the HTML from the page
 html <- read_html(url)
 
 # Find elements whose id or class contains "staff"
-candidates <- html %>% html_elements('[id*="staff"], [class*="staff"]')
+candidates <- html %>% html_elements('[class*="staff-page"], [id*="staff"], [class*="staff"], [class*="team-member"], [class*="staffList"]')
 
-# Select the first candidate node
-main_staff_node <- candidates[[1]]
+# Select the best candidate node
+if (length(candidates) == 0) {
+  stop("No candidates found for staff container.")
+}
+
+# Count how many staff members each candidate contains
+counts <- sapply(candidates, function(node) {
+  # Adjust the selector inside to match actual staff member elements
+  length(html_elements(node, '[class*="staff"], [class*="staff-card"], [class*="team-member"], [class*="staff-item"]'))
+})
+
+# Pick the node with the maximum count
+best_index <- which.max(counts)
+main_staff_node <- candidates[[best_index]]
 
 # Convert the node to HTML (as text)
 main_staff_html <- as.character(main_staff_node)

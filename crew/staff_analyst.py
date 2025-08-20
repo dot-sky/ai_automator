@@ -19,14 +19,15 @@ def create_analysis_task(staff_html, analyst):
             "- Name\n"
             "- Department\n"
             "- Position\n"
-            "- Phone (if available else N\\A)\n"
+            "- Phone (if available else N/A)\n"
             "- Email (if available with format xyz@example.com else N/A)\n"
-            "- Biography (if available else N\\A)\n"
-            "- Image link (Full Cloudflare URL taken from the <img> src attribute) else N/A\n"
+            "- Biography (if available else N/A)\n"
+            "- Image link (URL taken from the <img> src attribute) else N/A\n"
         ),
         expected_output=(
             "A list in JSON format, where each staff member is represented as an object containing the following fields if present: "
-            "name, department, position, phone, email, biography, image_url."
+            "name, department, position, phone, email, biography, image_url.\n"
+            "DO NOT explain your answer, do not explain your thought process, the only output should be the list in json format\n"
         ),
         agent=analyst
     )

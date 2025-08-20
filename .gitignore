@@ -42,3 +42,16 @@ htmlcov/
 dist/
 build/
 .eggs/
+
+# Notes
+notes.txt
+doc.md
+
+# Folders
+staff_images
+Staff-Test-Page_files
+Staff-Test-Page.html
+staff_container.txt
+output_staff.json
+staff_container.txt
+Staff-Test-Page.html

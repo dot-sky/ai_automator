@@ -9,13 +9,14 @@ from crewai import Crew, Process
 import scripts.automator_live
 import re
 
-def main():
+def main(live_staff_url):
     # Step 1: Run the R script to generate the staff HTML
-    run_r_script()
+    run_r_script(live_staff_url)
+
     staff_html = read_staff_html(STAFF_HTML_FILE)
-    llm = get_gemini_llm()
 
     # Step 2: Create agents
+    llm = get_gemini_llm()
     analyst = create_analyst(llm)
     image_verifier = create_image_verifier(llm)
 
@@ -25,8 +26,8 @@ def main():
 
     # Step 4: Set up and run the Crew process
     crew = Crew(
-        agents=[analyst, image_verifier],
-        tasks=[analysis_task, image_verification_task],
+        agents=[analyst],
+        tasks=[analysis_task],# [analysis_task, image_verification_task]
         process=Process.sequential,
         verbose=True
     )
@@ -66,6 +67,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
-    scripts.automator_live.automation_script()
+    live_staff_url = input("➡️  Enter live staff URL: ").strip()
+    ddc_id = input("➡️  Enter DDC site ID: ").strip()
+
+    #main(live_staff_url)
+    scripts.automator_live.automation_script(ddc_id)
 

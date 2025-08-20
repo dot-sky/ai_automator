@@ -145,6 +145,8 @@ def submit_staff_safe(staff_list, driver, timeout=15):
         except Exception as e:
             print(f"Failed to submit staff member '{staff.get('name', '[Unknown Name]')}': {e}")
 
+
+
 with open("staff.json", "r") as file:
     staff_data = json.load(file)
 

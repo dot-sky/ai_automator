@@ -1,0 +1,29 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+def wait_and_click(wait, xpath):
+    element = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
+    element.click()
+
+def wait_and_type(wait, xpath, text):
+    element = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
+    element.clear()
+    element.send_keys(text)
+
+def find_by_xpath_and_click(driver, wait, xpath):
+    element = wait.until(EC.presence_of_element_located((By.XPATH, xpath)))
+    scroll_into_view_and_click(driver, wait, element)
+
+
+def scroll_into_view_and_click(driver, wait, element):
+    driver.execute_script("arguments[0].scrollIntoView({block:'center'});", element)
+    wait.until(EC.element_to_be_clickable(element)).click()
+
+def wait_for_element_to_disappear(wait, xpath):
+    try:
+        wait.until(EC.invisibility_of_element_located((By.XPATH, xpath)))
+        return True
+    except:
+        print(f"⚠️ Timeout: Element '{xpath}' didn't dissapear.")
+        return False
