@@ -1,6 +1,7 @@
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
 
 def wait_and_click(wait, xpath):
     element = wait.until(EC.element_to_be_clickable((By.XPATH, xpath)))
@@ -24,6 +25,9 @@ def wait_for_element_to_disappear(wait, xpath):
     try:
         wait.until(EC.invisibility_of_element_located((By.XPATH, xpath)))
         return True
-    except:
+    except TimeoutException:
         print(f"⚠️ Timeout: Element '{xpath}' didn't dissapear.")
         return False
+
+def has_class(element, class_name):
+    return class_name in element.get_attribute('class').split()

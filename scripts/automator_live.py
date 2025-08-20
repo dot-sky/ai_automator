@@ -1,25 +1,30 @@
-from selenium import webdriver
-from selenium.webdriver import ActionChains
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.common.exceptions import TimeoutException
-
-from IPython import embed
-from scripts import connect_staff
-from scripts import login
-from scripts.const import XPATH, WAIT
-from scripts.utils import wait_and_click, wait_and_type, wait_for_element_to_disappear, find_by_xpath_and_click, scroll_into_view_and_click
-
-import time
 import json
 import os
-import requests
-from urllib.parse import urlparse
+import time
 from pathlib import Path
+from urllib.parse import urlparse
+
+import requests
+from IPython import embed
+from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from webdriver_manager.chrome import ChromeDriverManager
+
+from scripts import login
+from scripts.const import WAIT, XPATH
+from scripts.utils import (
+    find_by_xpath_and_click,
+    scroll_into_view_and_click,
+    wait_and_click,
+    wait_and_type,
+    wait_for_element_to_disappear,
+)
 
 IMAGES_FOLDER = "staff_images"
 BASE_URL = "BASE"
@@ -31,7 +36,7 @@ def get_unique_departments(staff_data):
 def submit_departments(departments, driver):
     wait = WebDriverWait(driver, WAIT.SHORT)
 
-    print(f"Submitting departments: ")
+    print("Submitting departments: ")
     for department in departments:
         try:
             print(f" * {department}")
