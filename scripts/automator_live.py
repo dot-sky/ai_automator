@@ -7,7 +7,6 @@ from urllib.parse import urlparse
 import requests
 from IPython import embed
 from selenium import webdriver
-from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -15,24 +14,21 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
-from scripts import connect_staff, login, media_library
+from scripts import login, media_library
 from scripts.const import WAIT, XPATH
 from scripts.utils import (
-    find_by_xpath_and_click,
     get_base_url,
     wait_and_click,
     wait_and_type,
-    wait_for_element_to_disappear,
 )
 
-IMAGES_FOLDER = "staff_images"
 
 # Data processing
 def get_unique_departments(staff_data):
     return list(dict.fromkeys(member["department"] for member in staff_data))
 
 def submit_departments(departments, driver):
-    wait = WebDriverWait(driver, WAIT.SHORT)
+    wait = WebDriverWait(driver, WAIT.MEDIUM)
 
     print("Submitting departments: ")
     for department in departments:
@@ -54,10 +50,10 @@ def get_image_file_name(staff_name, image_url):
     filename = f"{name}{file_extension}"
     return filename
 
-def download_staff_images(staff_data, base_url):
-    if os.path.exists(IMAGES_FOLDER):
-        shutil.rmtree(IMAGES_FOLDER)
-    Path(IMAGES_FOLDER).mkdir(parents=True, exist_ok=True)
+def download_staff_images(staff_data, base_url, local_folder):
+    if os.path.exists(local_folder):
+        shutil.rmtree(local_folder)
+    Path(local_folder).mkdir(parents=True, exist_ok=True)
 
     for member in staff_data:
         image_url = member.get("image_url", "").strip()
@@ -72,7 +68,7 @@ def download_staff_images(staff_data, base_url):
 
         filename = get_image_file_name(member.get("name"), image_url)
 
-        file_path = Path(IMAGES_FOLDER) / filename
+        file_path = Path(local_folder) / filename
         try:
             # Download image
             response = requests.get(image_url, stream=True, timeout=10)
@@ -88,79 +84,12 @@ def download_staff_images(staff_data, base_url):
         except requests.RequestException as e:
             print(f"❌ Failed to download {image_url}: {e}")
 
-def upload_staff_images_in_batches(driver):
-    batch_size=20
-    # Get all image paths
-    image_paths = list(Path(IMAGES_FOLDER).glob("*.*"))  # all files in folder
-    wait = WebDriverWait(driver, WAIT.SHORT)
-    wait_upload = WebDriverWait(driver, WAIT.UPLOAD)
-
-    if not image_paths:
-        print("⚠️ No images found to upload.")
-        return
-
-    total = len(image_paths)
-    print(f"📦 Found {total} images. Uploading in batches of {batch_size}...")
-
-    # Split into batches
-    for i in range(0, total, batch_size):
-        # click on upload
-        wait_and_click(wait, '//*[@id="media-library-ui-root"]/div/div/div[2]/div[1]/div[3]/nsemble-button[3]')
-
-        batch = image_paths[i:i + batch_size]
-        # Find the file input each time (some pages reset it after upload)
-        file_input = driver.find_element(By.ID, "files")
-
-        print(f"💬  Uploading batch {i//batch_size + 1} ({len(batch)} files)...")
-        # Send this batch of absolute paths separated by newline
-        files_to_upload = "\n".join(str(img.resolve()) for img in batch)
-        file_input.send_keys(files_to_upload)
-
-        # upload image click
-        # TODO: scroll into view  
-        find_by_xpath_and_click(driver, wait,'//*[@id="modal-footer"]/div/div/div/div/nsemble-button')
-
-        # wait until upload image btn dissapears (spinner)
-        wait_for_element_to_disappear(wait_upload, '//*[@id="modal-footer"]/div/div/div/div/nsemble-button')
-
-        # close
-        wait_and_click(wait, '//*[@id="modal-footer"]/div/div/nsemble-button')
-
-        print("   Upload completed")
-        # Optional: wait between batches so site can process uploads
-
-    print("✅ All images uploaded")
 
 
-def select_img(driver, wait, file_name):
-    wait_and_click(wait, '//*[@id="cmsc-scroll-container"]/div/form/div[1]/div[1]/button')
 
-    iframe = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="library-panel"]')))
-    driver.switch_to.frame(iframe)
-
-    # pick image
-    wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#media-library-ui-root .grid-view")))
-
-    # --- Step 4: Find the file span inside .grid-view
-    file_element = wait.until(
-        EC.presence_of_element_located(
-            (By.XPATH, f".//span[@class='file-name' and text()='{file_name}']")
-        )
-    )
-    driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", file_element)
-    wait.until(EC.element_to_be_clickable((By.XPATH, f".//span[@class='file-name' and text()='{file_name}']")))
-
-    # TODO: search in next pages if necessary
-    
-    # --- Step 5: Double-click on the file element
-    actions = ActionChains(driver)
-    actions.double_click(file_element).perform()
-
-    driver.switch_to.default_content()
-    print("Image selected succesfully")
 
 def submit_staff_safe(staff_list, driver):
-    wait = WebDriverWait(driver, WAIT.SHORT)
+    wait = WebDriverWait(driver, WAIT.MEDIUM)
 
     def safe_send(xpath, key, default=""):
         try:
@@ -191,7 +120,7 @@ def submit_staff_safe(staff_list, driver):
 
             # select image
             if staff.get("image_url") != "N/A":
-                select_img(driver, wait, get_image_file_name(staff.get("name"),staff.get("image_url")))
+                media_library.select_img_modal_3(driver, wait, get_image_file_name(staff.get("name"), staff.get("image_url")))
 
             # Select Department
             dept_name = staff.get("department", "").strip()
@@ -219,8 +148,6 @@ def submit_staff_safe(staff_list, driver):
             print(f"Failed to submit staff member '{staff.get('name', '[Unknown Name]')}': {e}")
 
 def start_browser_driver():
-    # FOLDER_PROFILE_URL = r"D:\mojix\repo\hackaton-coderoad\scripts\selenium-profile"
-
     options = Options()
     options.add_argument("--start-maximized")
     options.add_argument("--log-level=3")
@@ -228,9 +155,6 @@ def start_browser_driver():
 
     # Supress chrome log messages
     service = Service(ChromeDriverManager().install(), log_path=os.devnull)
-    # options.add_argument("user-data-dir="+FOLDER_PROFILE_URL)
-    # options.add_argument("--remote-debugging-port=9222")
-
     driver = webdriver.Chrome(service=service, options=options)
     return driver
 
@@ -247,19 +171,21 @@ def automation_script(dealer_id, live_staff_url):
 
     BASE_URL = get_base_url(live_staff_url) 
 
+    LOCAL_IMG_FOLDER = "staff_images"
+
     driver = start_browser_driver()
 
     # ddc login 
     login.staff_tool_login(driver, STAFF_URL)
 
-    media_library.select_or_create_staff_folder(driver, MEDIA_LIB_URL)
-    download_staff_images(staff_data, BASE_URL)     
-    upload_staff_images_in_batches(driver) 
+    # media_library.select_or_create_staff_folder(driver, MEDIA_LIB_URL)
+    # download_staff_images(staff_data, BASE_URL, LOCAL_IMG_FOLDER)     
+    # media_library.upload_images(driver, LOCAL_IMG_FOLDER) 
 
-    connect_staff.connect_to_staff_tool(driver, STAFF_URL)
+    # connect_staff.connect_to_staff_tool(driver, STAFF_URL)
 
-    departments = get_unique_departments(staff_data)
-    submit_departments(departments, driver)
-    submit_staff_safe(staff_data, driver)
+    # departments = get_unique_departments(staff_data)
+    # submit_departments(departments, driver)
+    # submit_staff_safe(staff_data, driver)
 
     embed()

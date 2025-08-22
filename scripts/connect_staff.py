@@ -32,7 +32,7 @@ def connect_to_staff_tool(driver, staff_url):
     print("> Starting staff widget tool ...")
 
     wait_long = WebDriverWait(driver, WAIT.EXTRA_LONG)
-    wait_short = WebDriverWait(driver, WAIT.SHORT)
+    wait = WebDriverWait(driver, WAIT.MEDIUM)
 
     driver.get(staff_url)
 
@@ -40,7 +40,7 @@ def connect_to_staff_tool(driver, staff_url):
     while True:
         attempt += 1
         print(f"> Connecting to tool ({attempt})")
-        start_staff_widget(driver, wait_long, wait_short)
+        start_staff_widget(driver, wait_long, wait)
 
         # Step 2: Wait for either error or success
         try:
@@ -59,10 +59,10 @@ def connect_to_staff_tool(driver, staff_url):
 
             # Close the error modal
             try:
-                wait_and_click(wait_short, XPATH.staff_error_close_btn)
+                wait_and_click(wait, XPATH.staff_error_close_btn)
 
                 # Wait until modal disappears
-                wait_short.until(
+                wait.until(
                     EC.invisibility_of_element_located((By.XPATH, XPATH.staff_error_close_btn))
                 )
             except TimeoutException:

@@ -1,3 +1,6 @@
+from pathlib import Path
+
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,8 +14,11 @@ from scripts.shadow_helpers import (
     shadow_type,
 )
 from scripts.utils import (
+    click_element_by_xpath,
     has_class,
-    scroll_into_view_and_click,
+    scroll_and_click_element,
+    scroll_element_into_view,
+    switch_to_iframe_by_xpath,
     wait_and_click,
     wait_for_element_to_disappear,
 )
@@ -73,7 +79,7 @@ def find_or_create_sub_folder(driver, wait, root, parent_folder_label, sub_folde
 def select_or_create_staff_folder(driver, media_lib_url):
     parent_folder_name = 'Do Not Delete24'
     folder_name = 'Staff'
-    wait = WebDriverWait(driver, WAIT.SHORT)
+    wait = WebDriverWait(driver, WAIT.MEDIUM)
     wait_long = WebDriverWait(driver, WAIT.LONG)
 
     driver.get(media_lib_url)
@@ -84,7 +90,7 @@ def select_or_create_staff_folder(driver, media_lib_url):
     expand_folder(driver, wait, parent_folder_label)
 
     staff_folder = find_or_create_sub_folder(driver, wait, sidebar_root, parent_folder_label, folder_name)
-    scroll_into_view_and_click(driver, wait, staff_folder)
+    scroll_and_click_element(driver, wait, staff_folder)
 
 # Select inside staff tool
 def select_staff_folder_modal(driver, wait):
@@ -103,10 +109,51 @@ def select_staff_folder_modal(driver, wait):
     expand_folder(driver, wait, parent_folder_label)
 
     staff_folder_label = find_span_in_shadow(wait, root, 'Staff')
-    scroll_into_view_and_click(driver, wait, staff_folder_label)
+    scroll_and_click_element(driver, wait, staff_folder_label)
 
     driver.switch_to.default_content()
 
     # close window modal
     wait_and_click(wait,'//a[contains(@class, "ui-dialog-titlebar-close") and @role="button"]//span[contains(@class, "ui-icon-closethick")]')
     wait_and_click(wait,'//*[@id="cmsc-staff-editor-ct"]/div/div[3]/button[3]')
+
+def upload_images(driver, local_folder):
+    batch_size = 20
+
+    # Get all image paths
+    image_paths = list(Path(local_folder).glob("*.*"))  
+    wait = WebDriverWait(driver, WAIT.MEDIUM)
+    wait_upload = WebDriverWait(driver, WAIT.UPLOAD)
+
+    if not image_paths:
+        print("⚠️ No images found to upload.")
+        return
+
+    total = len(image_paths)
+    print(f"📦 Found {total} images. Uploading in batches of {batch_size}...")
+
+    for i in range(0, total, batch_size):
+        # click on upload
+        wait_and_click(wait, '//*[@id="media-library-ui-root"]/div/div/div[2]/div[1]/div[3]/nsemble-button[3]')
+
+        batch = image_paths[i:i + batch_size]
+        file_input = driver.find_element(By.ID, "files")
+
+        print(f"💬  Uploading batch {i//batch_size + 1} ({len(batch)} files)...")
+        files_to_upload = "\n".join(str(img.resolve()) for img in batch)
+        file_input.send_keys(files_to_upload)
+
+        # TODO: scroll into view  
+        click_element_by_xpath(driver, wait,'//*[@id="modal-footer"]/div/div/div/div/nsemble-button')
+
+        # wait until upload image btn dissapears (spinner)
+        wait_for_element_to_disappear(wait_upload, '//*[@id="modal-footer"]/div/div/div/div/nsemble-button')
+
+        # close
+        wait_and_click(wait, '//*[@id="modal-footer"]/div/div/nsemble-button')
+
+        print("   Completed!")
+
+    print("✅ All images uploaded")
+
+

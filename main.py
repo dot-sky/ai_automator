@@ -76,6 +76,6 @@ if __name__ == "__main__":
     live_staff_url = 'https://www.joefergusonbuickgmc.com/staff.aspx'
     ddc_id = 'mojix'
 
-    main(live_staff_url)
+    #main(live_staff_url)
     scripts.automator_live.automation_script(ddc_id, live_staff_url)
 
