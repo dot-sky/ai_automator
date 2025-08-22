@@ -1,10 +1,11 @@
-import time
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
 from scripts import utils
-from scripts.const import XPATH, WAIT
-from scripts.secrets_manager import get_or_set_username, get_or_set_password
+from scripts.const import WAIT, XPATH
+from scripts.secrets_manager import get_or_set_password, get_or_set_username
+
 
 def staff_tool_login(driver, staff_url):
     wait = WebDriverWait(driver, WAIT.LONG)
@@ -35,5 +36,7 @@ def staff_tool_login(driver, staff_url):
     utils.wait_for_element_to_disappear(wait, XPATH.cox_2fa_prompt)
 
     utils.wait_and_click(wait, XPATH.cox_submit_btn) 
+    
+    iframe = wait.until(EC.presence_of_element_located((By.XPATH, XPATH.staff_iframe)))
 
     print("✅ Login sequence completed.")

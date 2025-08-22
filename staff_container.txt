@@ -3,411 +3,170 @@
 <div class="tabs" role="region" aria-label="Department Tabs">
 <ul class="staff-nav list-unstyled" role="tablist">
 <li class=" active" role="presentation">
-<a class="btn btn-main border-radius-x" aria-controls="dept_53707" role="tab" data-toggle="tab" href="#dept_53707" data-dotagging-event="element_configuration" data-dotagging-event-action="click" data-dotagging-event-action-result="calc" data-dotagging-event-owner="dealeron" data-dotagging-element-type="header" data-dotagging-element-subtype="nav_button" data-dotagging-element-position="center_left">Sales Staff</a>
+<a class="btn btn-main border-radius-x" aria-controls="dept_50412" role="tab" data-toggle="tab" href="#dept_50412" data-dotagging-event="element_configuration" data-dotagging-event-action="click" data-dotagging-event-action-result="calc" data-dotagging-event-owner="dealeron" data-dotagging-element-type="header" data-dotagging-element-subtype="nav_button" data-dotagging-element-position="center_left">Management</a>
 </li>
 <li class="" role="presentation">
-<a class="btn btn-alt3 border-radius-x" aria-controls="dept_53708" role="tab" data-toggle="tab" href="#dept_53708" data-dotagging-event="element_configuration" data-dotagging-event-action="click" data-dotagging-event-action-result="calc" data-dotagging-event-owner="dealeron" data-dotagging-element-type="header" data-dotagging-element-subtype="nav_button" data-dotagging-element-position="center_left">Service Department</a>
+<a class="btn btn-alt3 border-radius-x" aria-controls="dept_50413" role="tab" data-toggle="tab" href="#dept_50413" data-dotagging-event="element_configuration" data-dotagging-event-action="click" data-dotagging-event-action-result="calc" data-dotagging-event-owner="dealeron" data-dotagging-element-type="header" data-dotagging-element-subtype="nav_button" data-dotagging-element-position="center_left">Sales Department</a>
 </li>
 <li class="" role="presentation">
-<a class="btn btn-alt3 border-radius-x" aria-controls="dept_53709" role="tab" data-toggle="tab" href="#dept_53709" data-dotagging-event="element_configuration" data-dotagging-event-action="click" data-dotagging-event-action-result="calc" data-dotagging-event-owner="dealeron" data-dotagging-element-type="header" data-dotagging-element-subtype="nav_button" data-dotagging-element-position="center_left">Parts Department</a>
+<a class="btn btn-alt3 border-radius-x" aria-controls="dept_50414" role="tab" data-toggle="tab" href="#dept_50414" data-dotagging-event="element_configuration" data-dotagging-event-action="click" data-dotagging-event-action-result="calc" data-dotagging-event-owner="dealeron" data-dotagging-element-type="header" data-dotagging-element-subtype="nav_button" data-dotagging-element-position="center_left">Service Department</a>
+</li>
+<li class="" role="presentation">
+<a class="btn btn-alt3 border-radius-x" aria-controls="dept_50415" role="tab" data-toggle="tab" href="#dept_50415" data-dotagging-event="element_configuration" data-dotagging-event-action="click" data-dotagging-event-action-result="calc" data-dotagging-event-owner="dealeron" data-dotagging-element-type="header" data-dotagging-element-subtype="nav_button" data-dotagging-element-position="center_left">Parts Department</a>
+</li>
+<li class="" role="presentation">
+<a class="btn btn-alt3 border-radius-x" aria-controls="dept_50416" role="tab" data-toggle="tab" href="#dept_50416" data-dotagging-event="element_configuration" data-dotagging-event-action="click" data-dotagging-event-action-result="calc" data-dotagging-event-owner="dealeron" data-dotagging-element-type="header" data-dotagging-element-subtype="nav_button" data-dotagging-element-position="center_left">FINANCE</a>
 </li>
 </ul>
 </div>
+<div aria-hidden="true" aria-labelledby="readMoreLabel_27366_486640" role="dialog" tabindex="-1" id="myModal_486640" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button data-dismiss="modal" class="close" type="button">×</button>
+<h3 class="modal-title">Dave Stock</h3>
+<p class="title margin-x">
+<b>Owner</b>
+</p>
+</div>
+<div class="modal-body">
+<p class="bio">As the operating partner of Ferguson, Dave brings 30 plus years experience to the Ferguson team. His philosophy is pretty simple and successful. Be honest and straight forward and customers will come back. At Ferguson, Dave demands that every team member strive to be the ultimate professional and each customer be completely satisfied.</p>
+<div class="modal-footer">
+<button data-dismiss="modal" class="btn btn-main close" type="button">Close</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="readMoreLabel_27366_486651" role="dialog" tabindex="-1" id="myModal_486651" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button data-dismiss="modal" class="close" type="button">×</button>
+<h3 class="modal-title">Bill Himes</h3>
+<p class="title margin-x">
+<b>Finance Manager</b>
+</p>
+</div>
+<div class="modal-body">
+<p class="bio">Bill is the newest addition to the Ferguson Family. He relocated to the Springs from Phoenix Arizona in the fall of 2007. When he is not working hard to save you money, Bill spends his time with his two sons.</p>
+<div class="modal-footer">
+<button data-dismiss="modal" class="btn btn-main close" type="button">Close</button>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="tabDisplay">
 <div class="tab-content margin-top-1x">
-<div class="tab-pane fade in active" id="dept_53707" role="tabpanel" title="Sales Staff">
+<div class="tab-pane fade in active" id="dept_50412" role="tabpanel" title="Management">
 <div class="staff-row gutter-2x">
 <div class="staff-card col-md-4 col-sm-6">
 <div class="panel panel-body staff-panel">
 <div class="row">
 <div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Jason_Roberts.jpg" alt="Jason Roberts " loading="lazy">
+<img class="img-responsive margin-auto" src="/static/dealer-27366/Staff/Dave_Stock.png" alt="Dave Stock" loading="lazy">
 </div>
 <div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
 <div class="staff-title h3 margin-top-x">
-Jason Roberts </div>
-<div class="staff-desc margin-bottom_5x">
-<em>President</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/jorge.jpg" alt="Jorge Castaneda " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Jorge Castaneda </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Sales Director</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Ruben_Ornelas.png" alt="Ruben Ornelas " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Ruben Ornelas </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Finance Director</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Angela_Allard.png" alt="Angela Allard " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Angela Allard </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Finance Manager</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/waleed.jpg" alt="Waleed Omran" loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Waleed Omran
+Dave Stock
 </div>
 <div class="staff-desc margin-bottom_5x">
-<em>Sales Manager</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/aleksandra.jpg" alt="Aleksandra Plewa " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Aleksandra Plewa </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/carlos.jpg" alt="Carlos Compean " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Carlos Compean </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Denzell_Vaval.png" alt="Denzell Vaval" loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Denzell Vaval
-</div>
-<div class="staff-desc margin-bottom_5x">
-<em> Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Eddie_Saucedo.png" alt="Eddie Saucedo " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Eddie Saucedo </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/jeff-wilson.jpg" alt="Jeff Wilson " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Jeff Wilson </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Luciano_Francia.png" alt="Luciano Francia " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Luciano Francia </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/maxwell.jpg" alt="Maxwell Harper " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Maxwell Harper </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/steve-hard.jpg" alt="Steve Harb " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Steve Harb </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Maria_Vega.png" alt="Maria Vega " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Maria Vega </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Office Manager</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Brandi_Ramirez.png" alt="Brandi Ramirez " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Brandi Ramirez </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Biller</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/resources/stafsaa/images/missingStaff.png" alt="Luna Torres " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Luna Torres </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Accounts Receivable &amp; Payable</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Emily_Ulloa.png" alt="Emily Ulloa " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Emily Ulloa </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Cashier</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/miguel.jpg" alt="Miguel Villicana" loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Miguel Villicana
-</div>
-<div class="staff-desc margin-bottom_5x">
-<em>Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/ray.jpg" alt="Ray Troupe" loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Ray Troupe
-</div>
-<div class="staff-desc margin-bottom_5x">
-<em>Product Specialist</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/resources/stafsaa/images/missingStaff.png" alt="Brandon Santoro" loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Brandon Santoro
-</div>
-<div class="staff-desc margin-bottom_5x">
-<em>Used Car Manager</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-<a href="mailto:bstanton@advantagedealer.net" class="btn btn-main btn-sm email" aria-label="Email" title="Email" data-dotagging-event="cta_interaction" data-dotagging-event-action="click" data-dotagging-event-action-result="redirect" data-dotagging-event-owner="dealeron" data-dotagging-element-order="0" data-dotagging-element-type="chat_tool" data-dotagging-element-subtype="cta_icon">
-<i class="fa fa-envelope"></i>
+<em>Owner</em>
+</div>
+<div class="staff-RM">
+<a class="btn btn-main btn-sm" data-toggle="modal" href="#myModal_486640" data-dotagging-event="cta_interaction" data-dotagging-event-action="click" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-element-order="1" data-dotagging-element-type="item_details" data-dotagging-element-subtype="cta_icon">
+<i class="fa fa-user"></i>
+<label for="myModalButton486640" id="readMoreLabel486640">Read More</label>
 </a>
 </div>
+<div class="btn-group margin-vert_5x staff-contact">
 </div>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade " id="dept_50413" role="tabpanel" title="Sales Department">
+<div class="staff-row gutter-2x">
 <div class="staff-card col-md-4 col-sm-6">
 <div class="panel panel-body staff-panel">
 <div class="row">
 <div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/resources/stafsaa/images/missingStaff.png" alt="Ty Smith" loading="lazy">
+<img class="img-responsive margin-auto" src="/static/dealer-27366/Staff/Stephan_Larson.png" alt="Stephan Larson" loading="lazy">
 </div>
 <div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
 <div class="staff-title h3 margin-top-x">
-Ty Smith
+Stephan Larson
 </div>
 <div class="staff-desc margin-bottom_5x">
-<em>Sales Manager</em>
+<em>General Sales Manager</em>
 </div>
 <div class="btn-group margin-vert_5x staff-contact">
-<a href="tel:3123304633" class="btn btn-main btn-sm phone1 phone-alert" data-department="53707" aria-label="Phone" title="Phone" data-dotagging-event="click_to_call" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-event-action="click" data-dotagging-comm-phone-number="3123304633" data-dotagging-department="Sales Staff" data-dotagging-affiliation="Ty Smith" data-dotagging-element-position="bottom_right">
+<a href="tel:(719)%20596-5005" class="btn btn-main btn-sm phone1 phone-alert" data-department="50413" aria-label="Phone" title="Phone" data-dotagging-event="click_to_call" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-event-action="click" data-dotagging-comm-phone-number="(719) 596-5005" data-dotagging-department="Sales Department" data-dotagging-affiliation="Stephan Larson" data-dotagging-element-position="bottom_right">
 <i class="fa fa-phone"></i>
 </a>
-<a href="mailto:tsmith@advantagedealer.net" class="btn btn-main btn-sm email" aria-label="Email" title="Email" data-dotagging-event="cta_interaction" data-dotagging-event-action="click" data-dotagging-event-action-result="redirect" data-dotagging-event-owner="dealeron" data-dotagging-element-order="1" data-dotagging-element-type="chat_tool" data-dotagging-element-subtype="cta_icon">
-<i class="fa fa-envelope"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="staff-card col-md-4 col-sm-6">
+<div class="panel panel-body staff-panel">
+<div class="row">
+<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+<img class="img-responsive margin-auto" src="/resources/stafsaa/images/missingStaff.png" alt="Tyler Kison" loading="lazy">
+</div>
+<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+<div class="staff-title h3 margin-top-x">
+Tyler Kison
+</div>
+<div class="staff-desc margin-bottom_5x">
+<em>New Vehicle Sales</em>
+</div>
+<div class="btn-group margin-vert_5x staff-contact">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="staff-card col-md-4 col-sm-6">
+<div class="panel panel-body staff-panel">
+<div class="row">
+<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+<img class="img-responsive margin-auto" src="/static/dealer-27366/Staff/Donte_Brown.png" alt="Donte Brown" loading="lazy">
+</div>
+<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+<div class="staff-title h3 margin-top-x">
+Donte Brown
+</div>
+<div class="staff-desc margin-bottom_5x">
+<em>GM Certified Sales and Leasing Consultant</em>
+</div>
+<div class="btn-group margin-vert_5x staff-contact">
+<a href="tel:(719)%20231-0269" class="btn btn-main btn-sm phone1 phone-alert" data-department="50413" aria-label="Phone" title="Phone" data-dotagging-event="click_to_call" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-event-action="click" data-dotagging-comm-phone-number="(719) 231-0269" data-dotagging-department="Sales Department" data-dotagging-affiliation="Donte Brown" data-dotagging-element-position="bottom_right">
+<i class="fa fa-phone"></i>
 </a>
-<a href="sms:3123304633" class="btn btn-main btn-block btn-sm visible-xs" style="margin-top: 5px" aria-label="Text" data-dotagging-event="click_to_call" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-event-action="click" data-dotagging-comm-phone-number="3123304633" data-dotagging-department="Sales Staff" data-dotagging-affiliation="Ty Smith" data-dotagging-element-position="bottom_right">
-<i class="fa fa-phone"></i>Text Me
-</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="staff-card col-md-4 col-sm-6">
+<div class="panel panel-body staff-panel">
+<div class="row">
+<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+<img class="img-responsive margin-auto" src="/static/dealer-27366/Staff/Michael_Jennings_and_Sweeti.png" alt="Michael Jennings and Sweetie" loading="lazy">
+</div>
+<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+<div class="staff-title h3 margin-top-x">
+Michael Jennings and Sweetie
+</div>
+<div class="staff-desc margin-bottom_5x">
+<em>Our Chaplain</em>
+</div>
+<div class="btn-group margin-vert_5x staff-contact">
 </div>
 </div>
 </div>
@@ -415,22 +174,25 @@ Ty Smith
 </div>
 </div>
 </div>
-<div class="tab-pane fade " id="dept_53708" role="tabpanel" title="Service Department">
+<div class="tab-pane fade " id="dept_50414" role="tabpanel" title="Service Department">
 <div class="staff-row gutter-2x">
 <div class="staff-card col-md-4 col-sm-6">
 <div class="panel panel-body staff-panel">
 <div class="row">
 <div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/louie.jpg" alt="Louie Hatzis" loading="lazy">
+<img class="img-responsive margin-auto" src="/static/dealer-27366/Staff/Travis_Hunter.png" alt="Travis Hunter" loading="lazy">
 </div>
 <div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
 <div class="staff-title h3 margin-top-x">
-Louie Hatzis
+Travis Hunter
 </div>
 <div class="staff-desc margin-bottom_5x">
 <em>Service Manager</em>
 </div>
 <div class="btn-group margin-vert_5x staff-contact">
+<a href="tel:(719)%20596-5005" class="btn btn-main btn-sm phone1 phone-alert" data-department="50414" aria-label="Phone" title="Phone" data-dotagging-event="click_to_call" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-event-action="click" data-dotagging-comm-phone-number="(719) 596-5005" data-dotagging-department="Service Department" data-dotagging-affiliation="Travis Hunter" data-dotagging-element-position="bottom_right">
+<i class="fa fa-phone"></i>
+</a>
 </div>
 </div>
 </div>
@@ -440,324 +202,12 @@ Louie Hatzis
 <div class="panel panel-body staff-panel">
 <div class="row">
 <div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Tom_Analitis.jpg" alt="Tom Analitis " loading="lazy">
+<img class="img-responsive margin-auto" src="/static/dealer-27366/Staff/Jeff_Williams.png" alt="Jeff Williams" loading="lazy">
 </div>
 <div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
 <div class="staff-title h3 margin-top-x">
-Tom Analitis </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Service Advisor</em>
+Jeff Williams
 </div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Yolanda_Vasquez.png" alt="Yolanda Vasquez" loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Yolanda Vasquez
-</div>
-<div class="staff-desc margin-bottom_5x">
-<em> Service Advisor</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Mark_Diamantos.jpg" alt="Mark Diamantos " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Mark Diamantos </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Tomasz_Dlugusz.jpg" alt="Tomasz Dlugusz " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Tomasz Dlugusz </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Juan_Gonzalez.png" alt="Juan Gonzalez " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Juan Gonzalez </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Gino_Hernandez.jpg" alt="Gino Hernandez " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Gino Hernandez </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Michael_Kencaly.png" alt="Michael Kencaly " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Michael Kencaly </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/James_Kurkul.png" alt="James Kurkul " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-James Kurkul </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Bill_Simmons.jpg" alt="Bill Simmons " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Bill Simmons </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Darisc_Stachnik.jpg" alt="Darisc Stachnik" loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Darisc Stachnik
-</div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Rick_Zarbock.jpg" alt="Rick Zarbock " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Rick Zarbock </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Nathan_Zavala.png" alt="Nathan Zavala " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Nathan Zavala </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Technician</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Maximus_Diaz.png" alt="Maximus Diaz " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Maximus Diaz </div>
-<div class="staff-desc margin-bottom_5x">
-<em>CSR</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Freddie_Stevenson.jpg" alt="Freddie Stevenson " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Freddie Stevenson </div>
-<div class="staff-desc margin-bottom_5x">
-<em>CSR</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Rigo_Suarez.png" alt="Rigo Suarez " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Rigo Suarez </div>
-<div class="staff-desc margin-bottom_5x">
-<em>CSR</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Maureen_Bearden.png" alt="Maureen Bearden " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Maureen Bearden </div>
-<div class="staff-desc margin-bottom_5x">
-<em>Warranty Administrator</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/staff/Amar.jpg" alt="Amar Khalil" loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Amar Khalil
-</div>
-<div class="staff-desc margin-bottom_5x">
-<em>Service Advisor</em>
-</div>
-<div class="btn-group margin-vert_5x staff-contact">
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="tab-pane fade " id="dept_53709" role="tabpanel" title="Parts Department">
-<div class="staff-row gutter-2x">
-<div class="staff-card col-md-4 col-sm-6">
-<div class="panel panel-body staff-panel">
-<div class="row">
-<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Kevin_Wisniewski.jpg" alt="Kevin Wisniewski " loading="lazy">
-</div>
-<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
-<div class="staff-title h3 margin-top-x">
-Kevin Wisniewski </div>
 <div class="staff-desc margin-bottom_5x">
 <em>Parts Manager</em>
 </div>
@@ -771,15 +221,19 @@ Kevin Wisniewski </div>
 <div class="panel panel-body staff-panel">
 <div class="row">
 <div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Douglass_Hoffman.jpg" alt="Douglass Hoffman " loading="lazy">
+<img class="img-responsive margin-auto" src="/resources/stafsaa/images/missingStaff.png" alt="Daniel Berger" loading="lazy">
 </div>
 <div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
 <div class="staff-title h3 margin-top-x">
-Douglass Hoffman </div>
+Daniel Berger
+</div>
 <div class="staff-desc margin-bottom_5x">
-<em>Parts Specialist</em>
+<em>Service Advisor</em>
 </div>
 <div class="btn-group margin-vert_5x staff-contact">
+<a href="tel:(719)%20596-5005" class="btn btn-main btn-sm phone1 phone-alert" data-department="50414" aria-label="Phone" title="Phone" data-dotagging-event="click_to_call" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-event-action="click" data-dotagging-comm-phone-number="(719) 596-5005" data-dotagging-department="Service Department" data-dotagging-affiliation="Daniel Berger" data-dotagging-element-position="bottom_right">
+<i class="fa fa-phone"></i>
+</a>
 </div>
 </div>
 </div>
@@ -789,13 +243,94 @@ Douglass Hoffman </div>
 <div class="panel panel-body staff-panel">
 <div class="row">
 <div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
-<img class="img-responsive margin-auto" src="/static/dealer-28582/Victor_Zamudio.jpg" alt="Victor Zamudio " loading="lazy">
+<img class="img-responsive margin-auto" src="/resources/stafsaa/images/missingStaff.png" alt="Carrie Baker" loading="lazy">
 </div>
 <div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
 <div class="staff-title h3 margin-top-x">
-Victor Zamudio </div>
+Carrie Baker
+</div>
+<div class="staff-desc margin-bottom_5x">
+<em>Service Advisor</em>
+</div>
+<div class="btn-group margin-vert_5x staff-contact">
+<a href="tel:(719)%20596-5005" class="btn btn-main btn-sm phone1 phone-alert" data-department="50414" aria-label="Phone" title="Phone" data-dotagging-event="click_to_call" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-event-action="click" data-dotagging-comm-phone-number="(719) 596-5005" data-dotagging-department="Service Department" data-dotagging-affiliation="Carrie Baker" data-dotagging-element-position="bottom_right">
+<i class="fa fa-phone"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade " id="dept_50415" role="tabpanel" title="Parts Department">
+<div class="staff-row gutter-2x">
+<div class="staff-card col-md-4 col-sm-6">
+<div class="panel panel-body staff-panel">
+<div class="row">
+<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+<img class="img-responsive margin-auto" src="/resources/stafsaa/images/missingStaff.png" alt="Cecil Monge" loading="lazy">
+</div>
+<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+<div class="staff-title h3 margin-top-x">
+Cecil Monge
+</div>
 <div class="staff-desc margin-bottom_5x">
 <em>Parts Specialist</em>
+</div>
+<div class="btn-group margin-vert_5x staff-contact">
+<a href="tel:(719)%20596-7517" class="btn btn-main btn-sm phone1 phone-alert" data-department="50415" aria-label="Phone" title="Phone" data-dotagging-event="click_to_call" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-event-action="click" data-dotagging-comm-phone-number="(719) 596-7517" data-dotagging-department="Parts Department" data-dotagging-affiliation="Cecil Monge" data-dotagging-element-position="bottom_right">
+<i class="fa fa-phone"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="staff-card col-md-4 col-sm-6">
+<div class="panel panel-body staff-panel">
+<div class="row">
+<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+<img class="img-responsive margin-auto" src="/resources/stafsaa/images/missingStaff.png" alt="Matt Wince" loading="lazy">
+</div>
+<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+<div class="staff-title h3 margin-top-x">
+Matt Wince
+</div>
+<div class="staff-desc margin-bottom_5x">
+<em>Parts Specialist</em>
+</div>
+<div class="btn-group margin-vert_5x staff-contact">
+<a href="tel:(719)%20596-5005" class="btn btn-main btn-sm phone1 phone-alert" data-department="50415" aria-label="Phone" title="Phone" data-dotagging-event="click_to_call" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-event-action="click" data-dotagging-comm-phone-number="(719) 596-5005" data-dotagging-department="Parts Department" data-dotagging-affiliation="Matt Wince" data-dotagging-element-position="bottom_right">
+<i class="fa fa-phone"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade " id="dept_50416" role="tabpanel" title="FINANCE">
+<div class="staff-row gutter-2x">
+<div class="staff-card col-md-4 col-sm-6">
+<div class="panel panel-body staff-panel">
+<div class="row">
+<div class="staff-img col-sm-5 col-xs-3 col-xxs-4">
+<img class="img-responsive margin-auto" src="/static/dealer-27366/Staff/Bill_Himes.png" alt="Bill Himes" loading="lazy">
+</div>
+<div class="staff-info col-sm-7 col-xs-9 col-xxs-8 pad-left-x">
+<div class="staff-title h3 margin-top-x">
+Bill Himes
+</div>
+<div class="staff-desc margin-bottom_5x">
+<em>Finance Manager</em>
+</div>
+<div class="staff-RM">
+<a class="btn btn-main btn-sm" data-toggle="modal" href="#myModal_486651" data-dotagging-event="cta_interaction" data-dotagging-event-action="click" data-dotagging-event-action-result="open" data-dotagging-event-owner="dealeron" data-dotagging-element-order="1" data-dotagging-element-type="item_details" data-dotagging-element-subtype="cta_icon">
+<i class="fa fa-user"></i>
+<label for="myModalButton486651" id="readMoreLabel486651">Read More</label>
+</a>
 </div>
 <div class="btn-group margin-vert_5x staff-contact">
 </div>

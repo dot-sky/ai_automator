@@ -1,13 +1,16 @@
 import json
+import re
+
+from crewai import Crew, Process
+
+import scripts.automator_live
+from config.settings import STAFF_HTML_FILE
+from crew.image_verifier import create_image_verification_task, create_image_verifier
+from crew.shared_llm import get_gemini_llm
+from crew.staff_analyst import create_analysis_task, create_analyst
 from scripts.run_r_script import run_r_script
 from staff.html_extractor import read_staff_html
-from crew.shared_llm import get_gemini_llm
-from crew.staff_analyst import create_analyst, create_analysis_task
-from crew.image_verifier import create_image_verifier, create_image_verification_task
-from config.settings import STAFF_HTML_FILE
-from crewai import Crew, Process
-import scripts.automator_live
-import re
+
 
 def main(live_staff_url):
     # Step 1: Run the R script to generate the staff HTML
@@ -26,8 +29,8 @@ def main(live_staff_url):
 
     # Step 4: Set up and run the Crew process
     crew = Crew(
-        agents=[analyst],
-        tasks=[analysis_task],# [analysis_task, image_verification_task]
+        agents=[analyst, image_verifier],
+        tasks=[analysis_task, image_verification_task],
         process=Process.sequential,
         verbose=True
     )
@@ -67,9 +70,12 @@ def main(live_staff_url):
 
 
 if __name__ == "__main__":
-    live_staff_url = input("➡️  Enter live staff URL: ").strip()
-    ddc_id = input("➡️  Enter DDC site ID: ").strip()
+    # live_staff_url = input("➡️  Enter live staff URL: ").strip()
+    # ddc_id = input("➡️  Enter DDC site ID: ").strip()
 
-    #main(live_staff_url)
-    scripts.automator_live.automation_script(ddc_id)
+    live_staff_url = 'https://www.joefergusonbuickgmc.com/staff.aspx'
+    ddc_id = 'mojix'
+
+    main(live_staff_url)
+    scripts.automator_live.automation_script(ddc_id, live_staff_url)
 

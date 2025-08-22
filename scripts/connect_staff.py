@@ -1,13 +1,15 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from scripts.const import XPATH, WAIT
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from scripts.const import WAIT, XPATH
 from scripts.utils import wait_and_click
+
 
 def start_staff_widget(driver, wait_short, wait_long):
     iframe = wait_long.until(
-        EC.element_to_be_clickable((By.XPATH, XPATH.staff_iframe))
+        EC.presence_of_element_located((By.XPATH, XPATH.staff_iframe))
     )
     driver.switch_to.frame(iframe)
 
@@ -26,17 +28,18 @@ def wait_for_either_element(driver):
 
     return False
 
-def connect_to_staff_tool(driver):
+def connect_to_staff_tool(driver, staff_url):
     print("> Starting staff widget tool ...")
-    wait_long = WebDriverWait(driver, WAIT.LONG)
+
+    wait_long = WebDriverWait(driver, WAIT.EXTRA_LONG)
     wait_short = WebDriverWait(driver, WAIT.SHORT)
+
+    driver.get(staff_url)
 
     attempt = 0
     while True:
         attempt += 1
         print(f"> Connecting to tool ({attempt})")
-
-        # Step 1: Start the staff widget
         start_staff_widget(driver, wait_long, wait_short)
 
         # Step 2: Wait for either error or success
@@ -48,7 +51,7 @@ def connect_to_staff_tool(driver):
 
         # Step 3: Handle outcomes
         if result == "error":
-            print("⚠️ Error: please connect to a US VPN.")
+            print("⚠️  Error: please connect to a US VPN.")
             answer = input("     Press 'y' and Enter when connected: ").strip().lower()
             if answer != 'y':
                 print("Aborting connection.")
@@ -71,7 +74,7 @@ def connect_to_staff_tool(driver):
 
         elif result == "success":
             print("✅ Connected to staff tool.")
-            print("⚠️ Disable VPN")
+            print("⚠️  Disable VPN")
             answer = input("     Press 'y' and Enter when disabled: ").strip().lower()
             if answer != 'y':
                 print("Aborting connection.")
