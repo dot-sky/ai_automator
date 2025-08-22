@@ -1,6 +1,7 @@
-import keyring
 import os
-from dotenv import load_dotenv, set_key, find_dotenv
+
+import keyring
+from dotenv import find_dotenv, load_dotenv, set_key
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -25,3 +26,9 @@ def get_or_set_username(env_var):
 
 def update_password():
     pass
+
+def load_credentials():
+    ddc_username = get_or_set_username('ddc')
+    cox_email = get_or_set_username('cox')
+    cox_password = get_or_set_password('cox', cox_email)
+    return ddc_username, cox_email, cox_password
