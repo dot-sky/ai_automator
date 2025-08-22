@@ -14,13 +14,23 @@ def wait_and_type(wait, xpath, text):
     element.clear()
     element.send_keys(text)
 
-def find_by_xpath_and_click(driver, wait, xpath):
+def click_element_by_xpath(driver, wait, xpath):
     element = wait.until(EC.presence_of_element_located((By.XPATH, xpath)))
-    scroll_into_view_and_click(driver, wait, element)
+    scroll_and_click_element(driver, wait, element)
+    return element
 
-def scroll_into_view_and_click(driver, wait, element):
+def scroll_and_click_element(driver, wait, element):
     driver.execute_script("arguments[0].scrollIntoView({block:'center'});", element)
     wait.until(EC.element_to_be_clickable(element)).click()
+
+def scroll_xpath_into_view(driver, wait, xpath):
+    element = wait.until(EC.presence_of_element_located((By.XPATH, xpath)))
+    scroll_element_into_view(driver, wait, element)
+    return element
+
+def scroll_element_into_view(driver, wait, element):
+    driver.execute_script("arguments[0].scrollIntoView({block:'center'});", element)
+    wait.until(EC.element_to_be_clickable(element))
 
 def wait_for_element_to_disappear(wait, xpath):
     try:
@@ -30,13 +40,14 @@ def wait_for_element_to_disappear(wait, xpath):
         print(f"⚠️ Timeout: Element '{xpath}' didn't dissapear.")
         return False
 
+def switch_to_iframe_by_xpath(driver, wait, xpath):
+    iframe = wait.until(EC.presence_of_element_located((By.XPATH, xpath)))
+    driver.switch_to.frame(iframe)
+    return iframe
+
 def has_class(element, class_name):
     return class_name in element.get_attribute('class').split()
 
-def get_base_url(url: str) -> str:
-    """
-    Extracts the base URL (scheme + domain) from a given URL.
-    """
-
+def get_base_url(url):
     parsed = urlparse(url)
     return f"{parsed.scheme}://{parsed.netloc}"
