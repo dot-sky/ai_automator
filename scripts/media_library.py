@@ -156,4 +156,41 @@ def upload_images(driver, local_folder):
 
     print("✅ All images uploaded")
 
+def select_img_modal(driver, wait, file_name):
+    wait_and_click(wait, '//*[@id="cmsc-scroll-container"]/div/form/div[1]/div[1]/button')
+    switch_to_iframe_by_xpath(driver, wait, '//*[@id="library-panel"]')
 
+    image = None
+
+    while not image:
+        # Wait for the image grid to be visible
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#media-library-ui-root .grid-view")))
+
+        # Try to locate the image on the current page
+        elements = driver.find_elements(By.XPATH, f"//span[@class='file-name' and text()='{file_name}']")
+        if elements:
+            image = elements[0]
+            scroll_element_into_view(driver, wait, image)
+            break
+
+        # Try to go to next page
+        next_buttons = driver.find_elements(By.XPATH, "//ul[@class='nsemble-pagination']/li[@class='next']")
+        if next_buttons and "disabled" not in next_buttons[0].get_attribute("class"):
+            scroll_and_click_element(driver, wait, next_buttons[0])
+            # Wait for grid refresh to avoid stale element
+            wait.until(EC.staleness_of(next_buttons[0]))
+        else:
+            # No next button or last page reached
+            print(f"⚠️  No image '{file_name}' not found in media library.")
+            # Close modal gracefully
+            wait_and_click(wait, '//a[contains(@class, "ui-dialog-titlebar-close") and @role="button"]//span[contains(@class, "ui-icon-closethick")]')
+            wait_and_click(wait, '//*[@id="cmsc-staff-editor-ct"]/div/div[3]/button[3]')
+            driver.switch_to.default_content()
+            return
+
+    # Double-click the found image
+    actions = ActionChains(driver)
+    actions.double_click(image).perform()
+
+    driver.switch_to.default_content()
+    print(f"Image '{file_name}' selected successfully.")
