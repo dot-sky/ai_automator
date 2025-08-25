@@ -3,12 +3,12 @@ import re
 
 from crewai import Crew, Process
 
-import scripts.automator_live
+import scripts.staff_submission_automation
 from config.settings import STAFF_HTML_FILE
 from crew.image_verifier import create_image_verification_task, create_image_verifier
 from crew.shared_llm import get_gemini_llm
 from crew.staff_analyst import create_analysis_task, create_analyst
-from scripts.run_r_script import run_r_script
+from scripts.extract_staff_html import run_r_script
 from staff.html_extractor import read_staff_html
 
 
@@ -77,5 +77,5 @@ if __name__ == "__main__":
     ddc_id = 'mojix'
 
     # main(live_staff_url)
-    scripts.automator_live.automation_script(ddc_id, live_staff_url)
+    scripts.staff_submission_automation.automation_script(ddc_id, live_staff_url)
 
