@@ -1,26 +1,27 @@
-import logging
-import sys
+class EmojiLogger:
+    EMOJIS = {
+        "info": "💬",
+        "warning": "⚠️",
+        "error": "❌",
+        "success": "✅",
+        "input": "➡️",
+    }
 
-EMOJIS = {
-    "info": "💬",
-    "warn": "⚠️",
-    "success": "✅",
-    "input": "➡️",
-    "error": "❌",
-}
+    def info(self, msg):
+        print(f"{self.EMOJIS['info']} {msg}")
 
-class EmojiFormatter(logging.Formatter):
-    def format(self, record):
-        emoji = EMOJIS.get(record.levelname.lower(), "")
-        return f"{emoji} {record.getMessage()}"
+    def warning(self, msg):
+        print(f"{self.EMOJIS['warning']} {msg}")
 
-def get_logger(name="automation"):
-    logger = logging.getLogger(name)
-    if not logger.handlers:
-        handler = logging.StreamHandler(sys.stdout)
-        handler.setFormatter(EmojiFormatter())
-        logger.addHandler(handler)
-        logger.setLevel(logging.INFO)
-    return logger
+    def error(self, msg):
+        print(f"{self.EMOJIS['error']} {msg}")
 
-log = get_logger()
+    def success(self, msg):
+        print(f"{self.EMOJIS['success']} {msg}")
+
+    def input(self, msg):
+        print(f"{self.EMOJIS['input']} {msg}")
+
+
+# global instance
+log = EmojiLogger()
