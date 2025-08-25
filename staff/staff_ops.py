@@ -11,7 +11,7 @@ from core.utils import (
 from staff import images
 
 
-def get_unique_departments(staff_data):
+def get_departments(staff_data):
     return list(dict.fromkeys(member["department"] for member in staff_data))
 
 def submit_departments(departments, driver):
@@ -28,7 +28,7 @@ def submit_departments(departments, driver):
         except Exception as e:
             log.error(f"Failed to submit department '{department}':", e)
 
-def submit_staff_safe(staff_list, driver, media_library):
+def submit_members(staff_list, driver, media_library):
     wait = WebDriverWait(driver, WAIT.MEDIUM)
 
     def safe_send(xpath, key, default=""):
