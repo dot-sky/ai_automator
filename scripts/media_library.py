@@ -52,12 +52,13 @@ class MediaLibrary:
 
     def find_or_create_folder(self, root, folder_name):
         folder_label = find_span_in_shadow(self.wait_extra_short, root, folder_name)
+
         if folder_label:
             return folder_label
 
-        log.warning('Creating folder "{folder_name}"...')
+        log.info(f'Creating folder "{folder_name}"...')
         wait_and_click(self.wait, '//*[@id="library-sidebar"]/div/div[2]/div/div[1]/nsemble-button')
-        self.create_folder(self.wait, folder_name)
+        self.create_folder(folder_name)
 
         folder_label = find_span_in_shadow(self.wait_extra_short, root, folder_name)
 
@@ -71,11 +72,11 @@ class MediaLibrary:
         if sub_folder:
             return sub_folder
 
-        log.warning('Creating folder "{sub_folder_name}"...')
+        log.info(f'Creating sub folder "{sub_folder_name}"...')
         parent_folder_label.click()
         btn_container = _shadow_find(parent_container, self.wait, ".icons")
         shadow_click(btn_container, self.wait, "[data-action='icon-1']:nth-child(2)")
-        self.create_folder(self.wait, sub_folder_name)
+        self.create_folder(sub_folder_name)
 
         # expand to make element visible
         if not has_class(children_container, 'open'):
@@ -84,16 +85,20 @@ class MediaLibrary:
         sub_folder = find_span_in_shadow(self.wait_extra_short, children_container, sub_folder_name)
         return sub_folder
 
-    def select_or_create_staff_folder(self, driver, media_lib_url):
-        driver.get(media_lib_url)
+    def select_or_create_staff_folder(self, media_lib_url):
+        self.driver.get(media_lib_url)
         # Get shadow root for library tree
         sidebar_root = get_shadow_root(self.wait_long, '//*[@id="library-sidebar"]', 'nsemble-tree')
 
-        parent_folder_label = self.find_or_create_folder(driver, self.wait, sidebar_root, MEDIA_LIB_FOLDER.parent)
-        self.expand_folder(driver, self.wait, parent_folder_label)
+        # click on root folder
+        root_folder = find_span_in_shadow(self.wait_long, sidebar_root, 'Media')
+        scroll_and_click_element(self.driver, self.wait, root_folder)
 
-        staff_folder = self.find_or_create_sub_folder(driver, self.wait, sidebar_root, parent_folder_label, MEDIA_LIB_FOLDER.staff)
-        scroll_and_click_element(driver, self.wait, staff_folder)
+        parent_folder_label = self.find_or_create_folder(sidebar_root, MEDIA_LIB_FOLDER.parent)
+        self.expand_folder(parent_folder_label)
+
+        staff_folder = self.find_or_create_sub_folder(parent_folder_label, MEDIA_LIB_FOLDER.staff)
+        scroll_and_click_element(self.driver, self.wait, staff_folder)
 
     # Select inside staff tool
     def select_staff_folder_modal(self):
@@ -107,10 +112,10 @@ class MediaLibrary:
 
         root = get_shadow_root(self.wait, '//*[@id="library-sidebar"]', 'nsemble-tree')
 
-        parent_folder_label = find_span_in_shadow(self.wait, root, 'Do Not Delete24')
-        self.expand_folder(self.driver, self.wait, parent_folder_label)
+        parent_folder_label = find_span_in_shadow(self.wait, root, MEDIA_LIB_FOLDER.parent)
+        self.expand_folder(parent_folder_label)
 
-        staff_folder_label = find_span_in_shadow(self.wait, root, 'Staff')
+        staff_folder_label = find_span_in_shadow(self.wait, root, MEDIA_LIB_FOLDER.staff)
         scroll_and_click_element(self.driver, self.wait, staff_folder_label)
 
         self.driver.switch_to.default_content()
@@ -127,7 +132,7 @@ class MediaLibrary:
             return
 
         total = len(image_paths)
-        log.info(f"📦 Found {total} images. Uploading in batches of {batch_size}...")
+        log.info(f"Found {total} images. Uploading in batches of {batch_size}...")
 
         for i in range(0, total, batch_size):
             wait_and_click(self.wait, '//*[@id="media-library-ui-root"]/div/div/div[2]/div[1]/div[3]/nsemble-button[3]')
