@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from scripts.const import WAIT, XPATH
-from scripts.utils import wait_and_click
+from config.const import WAIT, XPATH
+from core.utils import wait_and_click
 
 
 def start_staff_widget(driver, wait_short, wait_long):

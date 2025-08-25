@@ -6,15 +6,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 from core.logger import log
-from scripts.const import MEDIA_LIB_FOLDER, WAIT, XPATH
-from scripts.shadow_helpers import (
+from config.const import MEDIA_LIB_FOLDER, WAIT, XPATH
+from core.shadow_helpers import (
     _shadow_find,
     find_span_in_shadow,
     get_shadow_root,
     shadow_click,
     shadow_type,
 )
-from scripts.utils import (
+from core.utils import (
     click_element_by_xpath,
     has_class,
     scroll_and_click_element,

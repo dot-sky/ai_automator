@@ -3,9 +3,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 from core.logger import log
-from scripts import secrets_manager
-from scripts.const import WAIT, XPATH
-from scripts.utils import wait_and_click, wait_and_type, wait_for_element_to_disappear
+from core import secrets_manager
+from config.const import WAIT, XPATH
+from core.utils import wait_and_click, wait_and_type, wait_for_element_to_disappear
 
 
 def dealer_login(wait, username):
