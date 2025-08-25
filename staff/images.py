@@ -14,11 +14,11 @@ def download_staff_images(staff_data, base_url, local_folder):
         shutil.rmtree(local_folder)
     Path(local_folder).mkdir(parents=True, exist_ok=True)
 
+    log.success("Downloading images ")
     for member in staff_data:
         image_url = member.get("image_url", "").strip()
 
         if not image_url or image_url == 'N/A':
-            log.warning(f"Skipping entry with missing name or image_url: {member.get('name')}")
             continue
 
         # If the URL is relative, prepend the base domain

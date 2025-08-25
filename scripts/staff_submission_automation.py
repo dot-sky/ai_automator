@@ -9,11 +9,15 @@ import core.auth as auth_mod  # noqa: F401
 import core.logger as logger_mod  # noqa: F401
 import core.utils as utils_mod  # noqa: F401
 import staff.media_library as media_library_mod  # noqa: F401
+from config.settings import LOCAL_IMG_FOLDER  # noqa: F401
 from core import auth, browser
 from core.utils import (
     get_base_url,
 )
-from staff.media_library import MediaLibrary
+from staff import staff_ops  # noqa: F401
+from staff.connect import connect_to_staff_tool  # noqa: F401 
+from staff.images import download_staff_images  # noqa: F401
+from staff.media_library import MediaLibrary  # noqa: F401
 
 
 def refresh():
@@ -23,7 +27,6 @@ def refresh():
         except Exception as e:
             print(f"[refresh] Failed to reload {mod}: {e}")
     from core.utils import get_base_url  # noqa: F401
-    from staff.media_library import MediaLibrary  # noqa: F401
 
 
 
@@ -36,22 +39,21 @@ def automation_script(dealer_id, live_staff_url):
 
     BASE_URL = get_base_url(live_staff_url) 
 
-    LOCAL_IMG_FOLDER = "staff_images"
 
     driver = browser.start_driver()
 
     # ddc login 
     auth.login(driver, STAFF_URL)
     media_library = MediaLibrary(driver)
-    # media_library.select_or_create_staff_folder(MEDIA_LIB_URL)
-    # staff.images.download_staff_images(staff_data, BASE_URL, LOCAL_IMG_FOLDER)     
-    # media_library.upload_images(LOCAL_IMG_FOLDER) 
+    media_library.select_or_create_staff_folder(MEDIA_LIB_URL)
+    download_staff_images(staff_data, BASE_URL, LOCAL_IMG_FOLDER)     
+    media_library.upload_images(LOCAL_IMG_FOLDER) 
 
-    # connect_to_staff_tool(driver, STAFF_URL)
+    connect_to_staff_tool(driver, STAFF_URL)
 
-    # departments = staff_ops.get_unique_departments(staff_data)
-    # staff_ops.submit_departments(departments, driver)
-    # staff_ops.submit_staff_safe(staff_data, driver, media_library)
+    departments = staff_ops.get_unique_departments(staff_data)
+    staff_ops.submit_departments(departments, driver)
+    staff_ops.submit_staff_safe(staff_data, driver, media_library)
 
 
     config = Config()

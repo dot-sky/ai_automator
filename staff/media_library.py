@@ -5,8 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from core.logger import log
 from config.const import MEDIA_LIB_FOLDER, WAIT, XPATH
+from core.logger import log
 from core.shadow_helpers import (
     _shadow_find,
     find_span_in_shadow,

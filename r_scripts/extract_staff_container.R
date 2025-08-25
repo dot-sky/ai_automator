@@ -31,7 +31,9 @@ main_staff_node <- candidates[[best_index]]
 main_staff_html <- as.character(main_staff_node)
 
 # Save the HTML as text to a .txt file
-write(main_staff_html, file = "staff_container.txt")
+output_file <- file.path("data", "extracted_html", "staff_container.txt")
+
+write(main_staff_html, file = output_file)
 
 # Optional message
 cat("Content saved to staff_container.txt\n")
