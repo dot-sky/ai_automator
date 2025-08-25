@@ -2,9 +2,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from core.logger import log
-from core import secrets_manager
 from config.const import WAIT, XPATH
+from core import secrets_manager
+from core.logger import log
 from core.utils import wait_and_click, wait_and_type, wait_for_element_to_disappear
 
 
@@ -34,5 +34,7 @@ def login(driver, url):
     driver.get(url)
     dealer_login(wait, ddc_username)
     cox_login(wait, cox_email, cox_password)
+
+    wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="site-iframe"]')))
 
     log.success('Succesful login')
