@@ -1,6 +1,7 @@
 import json
 import os
 import shutil
+from importlib import reload  # noqa: F401
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -12,10 +13,18 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from traitlets.config import Config
 from webdriver_manager.chrome import ChromeDriverManager
 
-from scripts import login, media_library
+import core.logger as logger_mod  # noqa: F401
+import scripts.auth as auth_mod  # noqa: F401
+import scripts.const as const_mod  # noqa: F401
+import scripts.media_library as media_library_mod  # noqa: F401
+import scripts.utils as utils_mod  # noqa: F401
+from core.logger import log
+from scripts import auth
 from scripts.const import WAIT, XPATH
+from scripts.media_library import MediaLibrary
 from scripts.utils import (
     get_base_url,
     wait_and_click,
@@ -88,7 +97,7 @@ def download_staff_images(staff_data, base_url, local_folder):
 
 
 
-def submit_staff_safe(staff_list, driver):
+def submit_staff_safe(staff_list, driver, media_library):
     wait = WebDriverWait(driver, WAIT.MEDIUM)
 
     def safe_send(xpath, key, default=""):
@@ -100,35 +109,27 @@ def submit_staff_safe(staff_list, driver):
         except Exception as e:
             print(f"Could not fill {key}: {e}")
 
-    # select staff image folder
-    media_library.select_staff_folder_modal(driver, wait)
+    media_library.select_staff_folder_modal()
 
-    # 
     for staff in staff_list:
         try:
-            print(f"Submitting staff member: {staff.get('name', '[Unknown Name]')}")
-
-            # Click "Add Staff" button
+            log.info(f"Submitting staff member: {staff.get('name')}")
             wait_and_click(wait, XPATH.staff_add_btn)
 
-            # Fill form fields (only if value is valid)
             safe_send('//*[@id="staffName"]', "name")
             safe_send('//*[@id="staffTitle"]', "position")
             safe_send('//*[@id="staffPhone"]', "phone")
             safe_send('//*[@id="staffEmail"]', "email")
             safe_send('//*[@id="staffBio"]', "biography")
 
-            # select image
             if staff.get("image_url") != "N/A":
-                media_library.select_img_modal_3(driver, wait, get_image_file_name(staff.get("name"), staff.get("image_url")))
+                media_library.select_image_modal(get_image_file_name(staff.get("name"), staff.get("image_url")))
 
-            # Select Department
             dept_name = staff.get("department", "").strip()
             if dept_name and dept_name.upper() != "N/A":
                 dropdown_btn = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="staffDepartment"]')))
                 dropdown_btn.click()
 
-                # time.sleep(0.5)
                 menu_items = wait.until(EC.presence_of_all_elements_located((By.XPATH, '//ul[@role="listbox"]/li')))
                 matched = False
                 for item in menu_items:
@@ -138,14 +139,14 @@ def submit_staff_safe(staff_list, driver):
                         break
 
                 if not matched:
-                    print(f"Warning: Department '{dept_name}' not found for {staff.get('name')}")
+                    log.warning(f"Department '{dept_name}' not found for {staff.get('name')}")
                     continue
 
             # Submit the form
             wait_and_click(wait, XPATH.submit_staff_btn)
 
         except Exception as e:
-            print(f"Failed to submit staff member '{staff.get('name', '[Unknown Name]')}': {e}")
+            log.info(f"Failed to submit staff member '{staff.get('name')}': {e}")
 
 def start_browser_driver():
     options = Options()
@@ -161,7 +162,20 @@ def start_browser_driver():
 
 def go_to_page(driver, url):
     driver.get(url)
-    
+
+def refresh():
+    for mod in [auth_mod, const_mod, media_library_mod, utils_mod, logger_mod]:
+        try:
+            reload(mod)
+        except Exception as e:
+            print(f"[refresh] Failed to reload {mod}: {e}")
+    from core.logger import log  # noqa: F401
+    from scripts.const import WAIT, XPATH  # noqa: F401
+    from scripts.media_library import MediaLibrary  # noqa: F401
+    from scripts.utils import get_base_url, wait_and_click, wait_and_type  # noqa: F401
+
+
+
 def automation_script(dealer_id, live_staff_url):        
     with open(r"output_staff.json", "r", encoding="utf-8") as file:
         staff_data = json.load(file)
@@ -176,16 +190,20 @@ def automation_script(dealer_id, live_staff_url):
     driver = start_browser_driver()
 
     # ddc login 
-    login.staff_tool_login(driver, STAFF_URL)
-
-    # media_library.select_or_create_staff_folder(driver, MEDIA_LIB_URL)
+    auth.login(driver, STAFF_URL)
+    media_library = MediaLibrary(driver)
+    # media_library.select_or_create_staff_folder(MEDIA_LIB_URL)
     # download_staff_images(staff_data, BASE_URL, LOCAL_IMG_FOLDER)     
-    # media_library.upload_images(driver, LOCAL_IMG_FOLDER) 
+    # media_library.upload_images(LOCAL_IMG_FOLDER) 
 
     # connect_staff.connect_to_staff_tool(driver, STAFF_URL)
 
     # departments = get_unique_departments(staff_data)
     # submit_departments(departments, driver)
-    # submit_staff_safe(staff_data, driver)
+    # submit_staff_safe(staff_data, driver, media_library)
 
-    embed()
+
+    config = Config()
+    config.InteractiveShellApp.extensions = ["autoreload"]
+    config.InteractiveShellApp.exec_lines = ["%autoreload 2"]
+    embed(config=config, banner1="🚀 Autoreload is ON. Edit & save your modules, then rerun functions.")
