@@ -32,5 +32,5 @@ class WAIT:
     EXTRA_LONG = 60
     UPLOAD = 300
 class MEDIA_LIB_FOLDER:
-    parent ="Do Not Delete5"
-    staff = "Staff2"
+    parent ="Do Not Delete Test 2"
+    staff = "Staff"
