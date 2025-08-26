@@ -51,10 +51,9 @@ def automation_script(dealer_id, live_staff_url):
 
     connect_to_staff_tool(driver, STAFF_URL)
 
-    departments = staff_ops.get_unique_departments(staff_data)
+    departments = staff_ops.get_departments(staff_data)
     staff_ops.submit_departments(departments, driver)
-    staff_ops.submit_staff_safe(staff_data, driver, media_library)
-
+    staff_ops.submit_members(staff_data, driver, media_library)
 
     config = Config()
     config.InteractiveShellApp.extensions = ["autoreload"]

@@ -10,11 +10,11 @@ from core.logger import log
 
 
 def download_staff_images(staff_data, base_url, local_folder):
+    log.title("Downloading staff images ")
     if os.path.exists(local_folder):
         shutil.rmtree(local_folder)
     Path(local_folder).mkdir(parents=True, exist_ok=True)
 
-    log.success("Downloading images ")
     for member in staff_data:
         image_url = member.get("image_url", "").strip()
 
@@ -42,6 +42,8 @@ def download_staff_images(staff_data, base_url, local_folder):
 
         except requests.RequestException as e:
             log.error(f"Failed to download {image_url}: {e}")
+
+    log.end_title()
 
 def get_image_file_name(staff_name, image_url):
     parsed_url = urlparse(image_url)

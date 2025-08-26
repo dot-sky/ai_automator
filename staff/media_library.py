@@ -86,6 +86,7 @@ class MediaLibrary:
         return sub_folder
 
     def select_or_create_staff_folder(self, media_lib_url):
+        log.title('Selecting Staff folder')
         self.driver.get(media_lib_url)
         # Get shadow root for library tree
         sidebar_root = get_shadow_root(self.wait_long, '//*[@id="library-sidebar"]', 'nsemble-tree')
@@ -99,6 +100,7 @@ class MediaLibrary:
 
         staff_folder = self.find_or_create_sub_folder(parent_folder_label, MEDIA_LIB_FOLDER.staff)
         scroll_and_click_element(self.driver, self.wait, staff_folder)
+        log.end_title()
 
     # Select inside staff tool
     def select_staff_folder_modal(self):
@@ -125,6 +127,7 @@ class MediaLibrary:
         wait_and_click(self.wait,'//*[@id="cmsc-staff-editor-ct"]/div/div[3]/button[3]')
 
     def upload_images(self, local_folder, batch_size=20):
+        log.title("Uploading staff images")
         image_paths = list(Path(local_folder).glob("*.*"))
 
         if not image_paths:
@@ -139,16 +142,17 @@ class MediaLibrary:
             batch = image_paths[i:i + batch_size]
             file_input = self.driver.find_element(By.ID, "files")
 
-            log.info(f"Uploading batch {i//batch_size + 1} ({len(batch)} files)...")
+            log.plain(f"Uploading batch {i//batch_size + 1} ({len(batch)} files)...", indent=1)
             file_input.send_keys("\n".join(str(img.resolve()) for img in batch))
 
             click_element_by_xpath(self.driver, self.wait,'//*[@id="modal-footer"]/div/div/div/div/nsemble-button')
             wait_for_element_to_disappear(self.wait_upload, '//*[@id="modal-footer"]/div/div/div/div/nsemble-button')
             wait_and_click(self.wait, '//*[@id="modal-footer"]/div/div/nsemble-button')
 
-            log.success(f"Batch {i//batch_size + 1} completed.")
+            log.success(f"Batch {i//batch_size + 1} completed.", indent=2)
 
         log.success("All images uploaded.")
+        log.end_title()
 
     def select_image_modal(self, file_name):
         wait_and_click(self.wait, '//*[@id="cmsc-scroll-container"]/div/form/div[1]/div[1]/button')

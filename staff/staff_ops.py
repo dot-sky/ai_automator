@@ -17,16 +17,20 @@ def get_departments(staff_data):
 def submit_departments(departments, driver):
     wait = WebDriverWait(driver, WAIT.MEDIUM)
 
-    print("Submitting departments: ")
+    log.title("Submitting departments:")
+    log.info(f"Found {len(departments)} unique departments")
+
     for department in departments:
         try:
             wait_and_click(wait, XPATH.department_add_btn) 
-            log.info(f" * {department}")
             wait_and_type(wait, XPATH.department_name, department.title()) 
             wait_and_click(wait, XPATH.submit_department_btn) 
+            log.success(f"{department}",indent=1)
 
         except Exception as e:
             log.error(f"Failed to submit department '{department}':", e)
+    log.success('Departments submitted successfully')
+    log.end_title()
 
 def safe_write(wait, staff, key, xpath):
     try:
@@ -80,11 +84,14 @@ def submit_members(staff_list, driver, media_library):
     wait = WebDriverWait(driver, WAIT.MEDIUM)
     media_library.select_staff_folder_modal()
 
-    log.info("Submitting staff members:")
+    log.title("Submitting staff members:")
+    log.info(f"Found {len(staff_list)} staff members")
     for staff in staff_list:
         try:
             submit_one_member(wait, staff, media_library)
-            log.success(f"{staff.get('name')}")
+            log.success(f"{staff.get('name')}", indent=1)
         except Exception as e:
             log.error(f"Failed to submit staff member '{staff.get('name')}': {e}")
 
+    log.success("All staff members submitted successfully")
+    log.end_title()

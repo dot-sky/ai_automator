@@ -32,9 +32,12 @@ def login(driver, url):
     ddc_username, cox_email, cox_password = secrets_manager.load_credentials()
 
     driver.get(url)
+
+    log.title("Login")
     dealer_login(wait, ddc_username)
     cox_login(wait, cox_email, cox_password)
 
     wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="site-iframe"]')))
 
     log.success('Succesful login')
+    log.end_title()

@@ -5,6 +5,7 @@ from crewai import Crew, Process
 
 import scripts.staff_submission_automation
 from config.settings import STAFF_HTML_FILE
+from core.prompter import prompter
 from crew.image_verifier import create_image_verification_task, create_image_verifier
 from crew.shared_llm import get_gemini_llm
 from crew.staff_analyst import create_analysis_task, create_analyst
@@ -70,12 +71,13 @@ def main(live_staff_url):
 
 
 if __name__ == "__main__":
-    # live_staff_url = input("➡️  Enter live staff URL: ").strip()
-    # ddc_id = input("➡️  Enter DDC site ID: ").strip()
 
-    live_staff_url = 'https://www.joefergusonbuickgmc.com/staff.aspx'
-    ddc_id = 'mojix'
+    live_staff_url = prompter.ask("Enter live staff URL")
+    ddc_id = prompter.ask("Enter DDC site ID")
 
-    # main(live_staff_url)
+    # live_staff_url = 'https://www.joefergusonbuickgmc.com/staff.aspx'
+    # ddc_id = 'mojix'
+
+    main(live_staff_url)
     scripts.staff_submission_automation.automation_script(ddc_id, live_staff_url)
 
