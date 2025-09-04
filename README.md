@@ -65,7 +65,7 @@ cd crew_ai_automator
 3. Install the package:
 
 ```bash
-pip install .
+pip install -r requirements.txt
 ```
 
 This will automatically install all required Python dependencies.
