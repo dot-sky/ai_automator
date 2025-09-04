@@ -38,7 +38,7 @@ def wait_for_either_element(driver):
     return False
 
 def connect_to_staff_tool(driver, staff_url):
-    log.title("Starting Staff Widget Tool...")
+    log.title("Staff Tool Connection")
 
     wait_long = WebDriverWait(driver, WAIT.EXTRA_LONG)
     wait = WebDriverWait(driver, WAIT.MEDIUM)
@@ -59,28 +59,26 @@ def connect_to_staff_tool(driver, staff_url):
         except TimeoutException:
             log.error("Timed out waiting for staff tool to load.")
             log.end_title()
-            return
+            raise TimeoutException
 
         if result == "error":
             log.warning("A US VPN connection is required.")
-            answer = prompter.ask_yes_no("Connect to a US VPN, then press 'y' and Enter", indent=2)
-            if not answer:
-                log.error("Aborting connection.")
-                log.end_title()
-                return
+            answer = False
+            while not answer:
+                answer = prompter.ask_yes_no("Connect to a US VPN, then press 'y' and Enter", indent=1)
             try:
                 wait_and_click(wait, XPATH.staff_error_close_btn)
                 wait.until(EC.invisibility_of_element_located((By.XPATH, XPATH.staff_error_close_btn)))
             except TimeoutException:
                 log.error("Close button did not disappear — aborting.")
                 log.end_title()
-                return
+                raise TimeoutException
             continue # Retry
 
         elif result == "success":
             log.success("Successfully connected to staff tool.")
             log.warning("VPN must now be disabled for the next step.")
-            answer = prompter.ask_yes_no("Disable your VPN, then press 'y' and Enter", indent=2)
+            answer = prompter.ask_yes_no("Disable your VPN, then press 'y' and Enter", indent=1)
             if not answer:
                 log.error("Aborting connection.")
                 log.end_title()

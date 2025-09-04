@@ -24,13 +24,22 @@ class XPATH:
     department_name = '//*[@id="departmentName"]'
     submit_department_btn = '/html/body/div[12]/div/div/div/div/div[3]/button[1]'
     submit_staff_btn = '//*[@id="cmsc-staff-editor-ct"]/div/div[3]/button[1]'
+
 class WAIT:
     EXTRA_SHORT = 3
     SHORT = 5
     MEDIUM = 15 
     LONG = 30
     EXTRA_LONG = 60
+    TWO_FA = 180
     UPLOAD = 300
+
 class MEDIA_LIB_FOLDER:
-    parent ="Do Not Delete Test 2"
+    parent ="Do Not Delete"
     staff = "Staff"
+
+class KEY:
+    DDC = 'DDC_USERNAME'
+    COX = 'COX_EMAIL'
+    COX_PASSWORD = 'COX_PASSWORD'
+    GEMINI_API = 'GEMINI_API_KEY'

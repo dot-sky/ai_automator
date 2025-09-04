@@ -1,5 +1,6 @@
 from crewai import Agent, Task
 
+
 def create_analyst(llm):
     return Agent(
         role='Senior Data Analyst',
@@ -17,12 +18,13 @@ def create_analysis_task(staff_html, analyst):
             f"{staff_html}\n\n"
             "Analyze the received HTML text. For each staff member, extract and organize the following fields in a Markdown list if they are present:\n"
             "- Name\n"
-            "- Department\n"
+            "- Department (if department contains extra text like: 'Meet Our staff' it should be left as it is)\n"
             "- Position\n"
             "- Phone (if available else N/A)\n"
             "- Email (if available with format xyz@example.com else N/A)\n"
             "- Biography (if available else N/A)\n"
             "- Image link (URL taken from the <img> src attribute) else N/A\n"
+            "For name, department and position, title case should be used, for example: 'JOHN DOE' becomes 'John Doe'\n"
         ),
         expected_output=(
             "A list in JSON format, where each staff member is represented as an object containing the following fields if present: "

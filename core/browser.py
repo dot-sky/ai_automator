@@ -6,11 +6,13 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+driver = None
 
 def go_to_page(driver, url):
     driver.get(url)
 
 def start_driver():
+    global driver
     options = Options()
     options.add_argument("--start-maximized")
     options.add_argument("--log-level=3")
@@ -21,4 +23,6 @@ def start_driver():
     driver = webdriver.Chrome(service=service, options=options)
     return driver
 
-
+def switch_to_default():
+    if driver:
+        driver.switch_to.default_content()

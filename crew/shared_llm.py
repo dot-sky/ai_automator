@@ -1,5 +1,7 @@
 from crewai import LLM
+
 from config.settings import GEMINI_API_KEY
+
 
 def get_gemini_llm():
     return LLM(

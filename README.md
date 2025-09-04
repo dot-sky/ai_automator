@@ -1,65 +1,81 @@
-# Proyecto Staff HTML Analyzer
+# AI Automator
 
-Este proyecto automatiza la extracción y análisis de información de staff desde HTML generado por un script R, utilizando Python y agentes de inteligencia artificial.
+**AI Automator** is an internal Python tool that automates staff requests. It leverages Crew AI and Gemini 2.5 Flash to process data and uses Selenium to automate task execution.
 
-## Requisitos
+## Features
 
-- Python 3.11 instalado ([descargar aquí](https://www.python.org/downloads/))
-- R instalado (para ejecutar scripts `.R`)
-- Acceso a la API de Gemini (Google AI) y su API KEY
+- Extracts information from live websites.
+- Processes data using Gemini 2.5 Flash and Crew AI.
+- Automates logins, tool integrations, and task execution using Selenium.
 
-## 1. Clona el repositorio
+---
 
-```bash
-git clone https://github.com/paukiss/hackaton-coderoad.git
-cd hackaton-coderoad
-````
+## Requirements
 
-## 2. Crea un entorno virtual con Python 3.11
+### Python dependencies
 
-```bash
-python3.11 -m venv venv
-```
+All required Python libraries are automatically installed via `pip`:
 
+- `crewai==0.175.0`
+- `ipython==8.12.3`
+- `keyring==25.6.0`
+- `protobuf==6.32.0`
+- `python-dotenv==1.1.1`
+- `requests==2.32.5`
+- `selenium==4.35.0`
+- `traitlets==5.14.3`
+- `wcwidth==0.2.13`
+- `webdriver_manager==4.0.2`
 
-## 3. Activa el entorno virtual
+### R dependency
 
-* En **Linux/Mac**:
+This tool requires **R** and the `rvest` package for certain tasks. Follow the steps below to install R and the required package:
 
-  ```bash
-  source venv/bin/activate
-  ```
+1. **Install R:**
+   - **Windows:** Download and run the installer from [CRAN](https://cran.r-project.org/bin/windows/base/).
+   - **Mac:** Download and run the installer from [CRAN](https://cran.r-project.org/bin/macosx/).
+   - **Linux (Debian/Ubuntu):**
+     ```bash
+     sudo apt update
+     sudo apt install r-base
+     ```
+2. **Install the `rvest` package:**
+   Open R and run:
+   ```R
+   R
+   install.packages("rvest")
+   ```
 
-* En **Windows**:
+## Installation
 
-  ```bat
-  venv\Scripts\activate
-  ```
+### Install from source
 
-## 4. Instala las dependencias
-
-```bash
-pip install -r requirements.txt
-```
-
-## 5. Configura tus variables de entorno
-
-Asegúrate de tener tu clave de API para Gemini en la variable de entorno `GOOGLE_API_KEY`.
-Puedes exportarla así en Linux/Mac:
-
-```bash
-export GOOGLE_API_KEY="tu_clave_aqui"
-```
-
-O en Windows (CMD):
-
-```bat
-set GOOGLE_API_KEY=tu_clave_aqui
-```
-
-## 6. Ejecuta el proyecto
+1. Clone the repository
 
 ```bash
-python main.py
+git clone https://github.com/dot-sky/ai_automator.git
 ```
 
+2. Navigate to the project directory:
+
+```bash
+cd crew_ai_automator
+```
+
+3. Install the package:
+
+```bash
+pip install .
+```
+
+This will automatically install all required Python dependencies.
+
+## Usage
+
+After installation, run the tool from the command line:
+
+```bash
+ai_automator
+```
+
+This executes the main() function in main.py.

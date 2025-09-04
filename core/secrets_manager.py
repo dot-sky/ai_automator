@@ -3,32 +3,56 @@ import os
 import keyring
 from dotenv import find_dotenv, load_dotenv, set_key
 
+from config.const import KEY
+from core.logger import log
+from core.prompter import prompter
+
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 
 def get_or_set_password(service_name, username):
     password = keyring.get_password(service_name, username)
     if password is None:
-        print(f"⚠️  No stored password found for '{service_name}' ({username}).")
-        password = input(f"➡️ Enter password for {service_name}: ").strip()
+        log.warning(f"No stored password found for '{service_name}' ({username}).")
+        password = prompter.ask_password(f"Enter password for {service_name}: ").strip()
         keyring.set_password(service_name, username, password)
-        print(f"✅ Password for '{service_name}' stored securely.")
+        log.success("Password saved.")
     return password
 
-def get_or_set_username(env_var):
+def get_or_set_env_var(env_var):
     username = os.getenv(env_var)
     if username is None:
-        print(f"⚠️  No username found for '{env_var}'.")
-        username = input(f"➡️ Enter username for {env_var}: ").strip()
+        log.warning(f"No value found for '{env_var}'.")
+        username = prompter.ask(f"Enter value for {env_var}: ").strip()
         set_key(find_dotenv(), env_var, username)
-        print(f"✅ Username for '{env_var}' stored in .env file.")
+        log.success(f"Value for '{env_var}' stored successfully.\n")
     return username
+
 
 def update_password():
     pass
 
 def load_credentials():
-    ddc_username = get_or_set_username('ddc')
-    cox_email = get_or_set_username('cox')
-    cox_password = get_or_set_password('cox', cox_email)
+    ddc_username = get_or_set_env_var(KEY.DDC)
+    cox_email = get_or_set_env_var(KEY.COX)
+    cox_password = get_or_set_password(KEY.COX, cox_email)
     return ddc_username, cox_email, cox_password
+
+def setup_credentials():
+    ddc = os.getenv(KEY.DDC)
+    cox = os.getenv(KEY.COX)
+    gemini = os.getenv(KEY.GEMINI_API)
+    password = None
+    if cox is not None:
+        password =  keyring.get_password(KEY.COX, cox)
+
+    if ddc is None or cox is None or gemini is None or password is None:
+        log.title('Credentials Setup')
+
+        get_or_set_env_var(KEY.DDC)
+        cox_email = get_or_set_env_var(KEY.COX)
+        get_or_set_env_var(KEY.GEMINI_API)
+        get_or_set_password(KEY.COX, cox_email)
+
+        log.end_title()
+

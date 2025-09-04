@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from config.const import WAIT, XPATH
 from core.logger import log
 from core.utils import (
+    scroll_and_click_element,
     wait_and_click,
     wait_and_type,
 )
@@ -17,8 +18,8 @@ def get_departments(staff_data):
 def submit_departments(departments, driver):
     wait = WebDriverWait(driver, WAIT.MEDIUM)
 
-    log.title("Submitting departments:")
-    log.info(f"Found {len(departments)} unique departments")
+    log.title("Submit Departments")
+    log.plain(f"Found {len(departments)} unique departments")
 
     for department in departments:
         try:
@@ -29,6 +30,8 @@ def submit_departments(departments, driver):
 
         except Exception as e:
             log.error(f"Failed to submit department '{department}':", e)
+            log.plain(e)
+            raise Exception
     log.success('Departments submitted successfully')
     log.end_title()
 
@@ -41,7 +44,7 @@ def safe_write(wait, staff, key, xpath):
     except Exception as e:
         log.warning(f"Could not fill {key}: {e}")
 
-def select_department(wait, staff):
+def select_department(driver, wait, staff):
     dept_name = staff.get("department", "").strip()
     if not dept_name or dept_name.upper() == "N/A":
         return False
@@ -50,14 +53,14 @@ def select_department(wait, staff):
     menu_items = wait.until(EC.presence_of_all_elements_located((By.XPATH, '//ul[@role="listbox"]/li')))
 
     for item in menu_items:
-        if dept_name.lower() in item.text.strip().lower():
-            item.click()
+        if dept_name.lower() == item.text.strip().lower():
+            scroll_and_click_element(driver, wait, item)
             return True
 
-    log.error(f"Could not select department '{dept_name}'")       
+    log.warning(f"Could not select department '{dept_name}'", 1)       
     return False
 
-def submit_one_member(wait, staff, media_library):
+def submit_one_member(driver, wait, staff, media_library):
     wait_and_click(wait, XPATH.staff_add_btn)
 
     fields = {
@@ -76,22 +79,31 @@ def submit_one_member(wait, staff, media_library):
         filename = images.get_image_file_name(staff.get("name"), image_url)
         media_library.select_image_modal(filename)
     
-    select_department(wait, staff)
+    select_department(driver, wait, staff)
 
     wait_and_click(wait, XPATH.submit_staff_btn)
 
 def submit_members(staff_list, driver, media_library):
+    log.title("Submit Staff Members")
+    log.plain(f"Found {len(staff_list)} staff members")
+    log.indent()
+
     wait = WebDriverWait(driver, WAIT.MEDIUM)
     media_library.select_staff_folder_modal()
+    failed_members = []
 
-    log.title("Submitting staff members:")
-    log.info(f"Found {len(staff_list)} staff members")
     for staff in staff_list:
         try:
-            submit_one_member(wait, staff, media_library)
-            log.success(f"{staff.get('name')}", indent=1)
-        except Exception as e:
-            log.error(f"Failed to submit staff member '{staff.get('name')}': {e}")
+            submit_one_member(driver, wait, staff, media_library)
+            log.success(f"{staff.get('name')}")
+        except Exception:
+            log.error(f"Failed to submit staff member '{staff.get('name')}':")
+            # log.plain(e)
+            failed_members.append(staff)
+
+    if failed_members:
+        raise Exception({"failed_members": failed_members})
 
     log.success("All staff members submitted successfully")
+    log.dedent()
     log.end_title()

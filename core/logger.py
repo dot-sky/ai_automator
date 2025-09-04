@@ -1,3 +1,5 @@
+import os
+
 from wcwidth import wcswidth
 
 
@@ -7,29 +9,38 @@ class EmojiLogger:
         "warning": "⚠️ ",
         "error": "❌",
         "success": "✅",
-        "input": "➡️ ",
-        "title": "▶️ "
+        "input": "📝",
+        "title": "✨ "
     }
 
     def __init__(self):
         self.indent_level = 0
-        self.indent_str = "    "  # 4 spaces
+        self.indent_str = "    "  
         self._emoji_width = 2 
 
     def _print(self, emoji, msg, indent=0):
         complete_indent = self.indent_str * (self.indent_level + indent)
-        # actual width of emoji in terminal
         width = wcswidth(emoji)
         padding = max(0, self._emoji_width - width)
         print(f"{complete_indent}{emoji}{' ' * padding} {msg}")
 
-    def title(self, msg):
-        self._print(self.EMOJIS["title"], msg)
+    def indent(self):
         self.indent_level += 1
 
-    def end_title(self):
+    def dedent(self):
         if self.indent_level > 0:
             self.indent_level -= 1
+
+    def title(self, msg):
+        border = "─" * (len(msg) + 6)
+        print()  
+        print(border)
+        self._print(self.EMOJIS["title"], msg)
+        print(border)
+        self.indent()
+
+    def end_title(self):
+        self.dedent()
 
     def info(self, msg, indent=0):
         self._print(self.EMOJIS["info"], msg, indent)
@@ -48,7 +59,9 @@ class EmojiLogger:
 
     def plain(self, msg, indent=0):
         indent = self.indent_str * (self.indent_level + indent)
-        print(f"{indent}{' ' * self._emoji_width} {msg}")
+        print(f"{indent} {msg}")
 
+    def clear(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
 # Global instance
 log = EmojiLogger()

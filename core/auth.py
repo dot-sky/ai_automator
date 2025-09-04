@@ -12,7 +12,7 @@ def dealer_login(wait, username):
     wait_and_type(wait, XPATH.dealer_username, username)
     wait_and_click(wait, XPATH.dealer_signin_btn)
 
-def cox_login(wait, email, password):
+def cox_login(wait, wait_2fa, email, password):
     wait_and_type(wait, XPATH.cox_email, email)
     wait_and_click(wait, XPATH.cox_next_btn)
 
@@ -23,19 +23,20 @@ def cox_login(wait, email, password):
 
     log.info('Complete 2FA authentication...')
 
-    wait_for_element_to_disappear(wait, XPATH.cox_2fa_prompt)
+    wait_for_element_to_disappear(wait_2fa, XPATH.cox_2fa_prompt)
 
     wait_and_click(wait, XPATH.cox_submit_btn) 
 
 def login(driver, url):
     wait = WebDriverWait(driver, WAIT.LONG)
+    wait_2fa = WebDriverWait(driver, WAIT.TWO_FA)
     ddc_username, cox_email, cox_password = secrets_manager.load_credentials()
 
     driver.get(url)
 
     log.title("Login")
     dealer_login(wait, ddc_username)
-    cox_login(wait, cox_email, cox_password)
+    cox_login(wait, wait_2fa, cox_email, cox_password)
 
     wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="site-iframe"]')))
 

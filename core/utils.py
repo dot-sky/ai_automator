@@ -1,6 +1,5 @@
 from urllib.parse import urlparse
 
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -33,12 +32,7 @@ def scroll_element_into_view(driver, wait, element):
     wait.until(EC.element_to_be_clickable(element))
 
 def wait_for_element_to_disappear(wait, xpath):
-    try:
-        wait.until(EC.invisibility_of_element_located((By.XPATH, xpath)))
-        return True
-    except TimeoutException:
-        print(f"⚠️ Timeout: Element '{xpath}' didn't dissapear.")
-        return False
+    wait.until(EC.invisibility_of_element_located((By.XPATH, xpath)))
 
 def switch_to_iframe_by_xpath(driver, wait, xpath):
     iframe = wait.until(EC.presence_of_element_located((By.XPATH, xpath)))
