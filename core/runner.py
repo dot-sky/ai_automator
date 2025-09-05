@@ -32,10 +32,10 @@ def run_step(step_fn, step_name, *args, manual_message=None, **kwargs):
                 log.error(f"Step '{step_name}' execution failed")
                 print(e)
 
-            choice = '' 
+            choice = 'none' 
             while choice not in 'rsm':
                 print()
-                choice = prompter.ask("Choose an option [R]etry, [S]kip, [M]anual") 
+                choice = prompter.ask("Choose an option [R]etry, [S]kip, [M]anual").strip().lower() 
 
             if choice == "r":
                 log.warning("Retrying step...")
