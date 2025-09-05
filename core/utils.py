@@ -1,3 +1,5 @@
+import os
+import shutil
 from urllib.parse import urlparse
 
 from selenium.webdriver.common.by import By
@@ -45,3 +47,16 @@ def has_class(element, class_name):
 def get_base_url(url):
     parsed = urlparse(url)
     return f"{parsed.scheme}://{parsed.netloc}"
+
+def ensure_path(path, clean=False):
+    if os.path.splitext(path)[1]:
+        folder = os.path.dirname(path) or path
+    else:
+        folder = path
+
+    if clean and os.path.exists(folder):
+        shutil.rmtree(path)
+    
+    os.makedirs(folder, exist_ok=True)
+
+    return path

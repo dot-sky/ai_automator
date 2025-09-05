@@ -4,18 +4,23 @@ from pathlib import Path
 from config.settings import RSCRIPT_FILE, STAFF_HTML_FILE
 from core.logger import log
 from core.runner import run_step
+from core.utils import ensure_path
 
 
 def run_r_script(live_staff_url):
+    log.title('HTML Data Extraction')
+    ensure_path(STAFF_HTML_FILE)
     output_file = Path(STAFF_HTML_FILE)
     try:
-        subprocess.run(["Rscript", RSCRIPT_FILE, live_staff_url], check=True)
+        subprocess.run(["Rscript", RSCRIPT_FILE, live_staff_url, output_file], check=True)
     except subprocess.CalledProcessError as e:
         raise Exception({"r_script_error": f"R script execution failed: {e}"})
 
     if not output_file.exists() or output_file.stat().st_size==0:
         raise Exception({"r_script_error": "R script produced empty output file:"})
 
+    log.success('Data obtained successfully') 
+    log.end_title()
     return str(output_file)
 
 

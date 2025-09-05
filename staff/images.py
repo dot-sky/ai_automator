@@ -1,5 +1,4 @@
 import os
-import shutil
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -7,13 +6,12 @@ import requests
 
 from config.const import WAIT
 from core.logger import log
+from core.utils import ensure_path
 
 
 def download_staff_images(driver, staff_data, base_url, local_folder):
     log.title("Download Staff Photos")
-    if os.path.exists(local_folder):
-        shutil.rmtree(local_folder)
-    Path(local_folder).mkdir(parents=True, exist_ok=True)
+    ensure_path(local_folder, clean=True)
 
     session = requests.Session()
     for cookie in driver.get_cookies():
