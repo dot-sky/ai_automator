@@ -22,7 +22,7 @@ class XPATH:
 
     department_add_btn = '//*[@id="cmsc-scroll-container"]/div[1]/button'
     department_name = '//*[@id="departmentName"]'
-    submit_department_btn = '/html/body/div[12]/div/div/div/div/div[3]/button[1]'
+    submit_department_btn = '//div[@id="cmsc-staff-editor-ct"]/div/div[contains(@class,"cmsc-footer")]/button[contains(text(),"Submit")]' #'/html/body/div[12]/div/div/div/div/div[3]/button[1]'
     submit_staff_btn = '//*[@id="cmsc-staff-editor-ct"]/div/div[3]/button[1]'
 
 class WAIT:
