@@ -67,7 +67,6 @@ def automation_script(dealer_id, live_staff_url):
 
     BASE_URL = get_base_url(live_staff_url) 
 
-
     driver = browser.start_driver()
     media_library = MediaLibrary(driver)
 
