@@ -1,7 +1,7 @@
 import os
 
 import keyring
-from dotenv import find_dotenv, load_dotenv, set_key
+from dotenv import find_dotenv, load_dotenv, set_key, unset_key
 
 from config.const import KEY
 from core.logger import log
@@ -28,9 +28,27 @@ def get_or_set_env_var(env_var):
         log.success(f"Value for '{env_var}' stored successfully.\n")
     return username
 
+def delete_credentials():
+    log.title('Removing credentials')
+    dotenv_path = find_dotenv()
+    if not dotenv_path:
+        log.warning(".env file not found. ")
 
-def update_password():
-    pass
+    username = os.getenv(KEY.COX)
+    if username:
+        try:
+            keyring.delete_password(KEY.COX, username)
+            log.info(f"Deleted keyring password for '{KEY.COX}' ({username}).")
+        except keyring.errors.PasswordDeleteError:
+            log.info(f"Deleted keyring password for '{KEY.COX}' ({username}).")
+
+    # Remove environment variables from .env
+    for env_var in [KEY.COX, KEY.DDC, KEY.GEMINI_API]:
+        if os.getenv(env_var):
+            unset_key(dotenv_path, env_var)
+            log.info(f"Removed '{env_var}' from .env file.")
+    log.plain('Search completed.')
+    log.end_title()
 
 def load_credentials():
     ddc_username = get_or_set_env_var(KEY.DDC)
