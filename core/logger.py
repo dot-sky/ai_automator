@@ -59,7 +59,7 @@ class EmojiLogger:
 
     def plain(self, msg, indent=0):
         indent = self.indent_str * (self.indent_level + indent)
-        print(f"{indent} {msg}")
+        print(f"{indent}{msg}")
 
     def clear(self):
         os.system('cls' if os.name == 'nt' else 'clear')

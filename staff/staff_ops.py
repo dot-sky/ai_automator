@@ -104,6 +104,6 @@ def submit_members(staff_list, driver, media_library):
     if failed_members:
         raise Exception({"failed_members": failed_members})
 
-    log.success("All staff members submitted successfully")
     log.dedent()
+    log.success("All staff members submitted successfully")
     log.end_title()
