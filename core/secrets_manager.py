@@ -65,6 +65,7 @@ def setup_credentials():
         password =  keyring.get_password(KEY.COX, cox)
 
     if ddc is None or cox is None or gemini is None or password is None:
+        log.clear()
         log.title('Credentials Setup')
 
         get_or_set_env_var(KEY.DDC)
