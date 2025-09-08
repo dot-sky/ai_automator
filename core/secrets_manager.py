@@ -56,7 +56,15 @@ def load_credentials():
     cox_password = get_or_set_password(KEY.COX, cox_email)
     return ddc_username, cox_email, cox_password
 
+def get_or_set_env_file():
+    dotenv_path = find_dotenv()
+    if not dotenv_path:
+        dotenv_path = os.path.join(os.getcwd(), ".env")
+        open(dotenv_path, "a").close()  
+
 def setup_credentials():
+    get_or_set_env_file()
+
     ddc = os.getenv(KEY.DDC)
     cox = os.getenv(KEY.COX)
     gemini = os.getenv(KEY.GEMINI_API)
