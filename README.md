@@ -17,7 +17,7 @@
 
 ```bash
 git clone https://github.com/dot-sky/ai_automator.git
-cd crew_ai_automator
+cd ai_automator
 ```
 
 ### 2. Install python dependencies:
