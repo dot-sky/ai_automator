@@ -23,8 +23,7 @@ class Prompter:
 
     def ask_password(self, message, indent=0):
         complete_indent = self.logger.indent_str * (self.logger.indent_level + indent)
-        emoji_display = self._format_emoji(self.emoji)
-        return getpass(f"{complete_indent}{emoji_display} {message}: ").strip()
+        return getpass(f"{complete_indent}   {message}: ").strip()
 
     def ask_yes_no(self, message, indent=0):
         response = self.ask(f"{message} (y/n)", indent)
