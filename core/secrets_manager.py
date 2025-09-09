@@ -16,7 +16,7 @@ def get_or_set_password(service_name, username):
         log.warning(f"No stored password found for '{service_name}' ({username}).")
         password = prompter.ask_password(f"Enter password for {service_name}: ").strip()
         keyring.set_password(service_name, username, password)
-        log.success("Password saved.")
+        log.success("Password saved.\n")
     return password
 
 def get_or_set_env_var(env_var):
@@ -78,8 +78,8 @@ def setup_credentials():
 
         get_or_set_env_var(KEY.DDC)
         cox_email = get_or_set_env_var(KEY.COX)
-        get_or_set_env_var(KEY.GEMINI_API)
         get_or_set_password(KEY.COX, cox_email)
+        get_or_set_env_var(KEY.GEMINI_API)
 
         log.end_title()
 
