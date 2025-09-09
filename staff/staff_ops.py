@@ -48,16 +48,20 @@ def select_department(driver, wait, staff):
     dept_name = staff.get("department", "").strip()
     if not dept_name or dept_name.upper() == "N/A":
         return False
+    max_retries = 4
+    available = []
+    for attempt in range(max_retries):
+        wait_and_click(wait, '//*[@id="staffDepartment"]')
+        menu_items = wait.until(EC.visibility_of_all_elements_located((By.XPATH, '//ul[@role="listbox"]/li')))
 
-    wait_and_click(wait, '//*[@id="staffDepartment"]')
-    menu_items = wait.until(EC.presence_of_all_elements_located((By.XPATH, '//ul[@role="listbox"]/li')))
+        available = [i.text.strip() for i in menu_items]
+        for item in menu_items:
+            if dept_name.lower() == item.text.strip().lower():
+                scroll_and_click_element(driver, wait, item)
+                return True 
+        scroll_and_click_element(driver, wait, menu_items[0])
 
-    for item in menu_items:
-        if dept_name.lower() == item.text.strip().lower():
-            scroll_and_click_element(driver, wait, item)
-            return True
-
-    log.warning(f"Could not select department '{dept_name}'", 1)       
+    log.warning(f"Could not select department '{dept_name}', selected default department: '{available[0]}'", 1)       
     return False
 
 def submit_one_member(driver, wait, staff, media_library):
