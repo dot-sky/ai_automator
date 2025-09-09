@@ -7,7 +7,7 @@ output_file <- args[2]
 html <- read_html(url)
 
 # Find 
-candidates <- html %>% html_elements('[class*="staff-page"], [id*="staff"], [class*="staff"], [class*="team-member"], [class*="staffList"] , [class*="meet_our_staff_wrap"]')
+candidates <- html %>% html_elements('[class*="staff-page"], [id*="staff"], [class*="Staff"], [class*="staff"], [class*="team-member"], [class*="staffList"] , [class*="meet_our_staff_wrap"]')
 
 # Select the best candidate node
 if (length(candidates) == 0) {
