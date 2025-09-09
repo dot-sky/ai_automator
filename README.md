@@ -2,6 +2,8 @@
 
 **AI Automator** is an internal Python tool that automates staff requests. It leverages Crew AI and **Gemini 2.5 Flash** to process data and uses Selenium to automate task execution.
 
+![Automation workflow showing steps for staff data submission process](docs/ai-automation.png)
+
 ## Features
 
 - Extracts information from live websites.
