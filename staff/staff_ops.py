@@ -103,6 +103,7 @@ def submit_members(staff_list, driver, media_library):
         except Exception:
             log.error(f"Failed to submit staff member '{staff.get('name')}':")
             # log.plain(e)
+            driver.switch_to.default_content()
             failed_members.append(staff)
 
     if failed_members:
