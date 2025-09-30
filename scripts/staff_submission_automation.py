@@ -1,22 +1,22 @@
 import json
-from importlib import reload  # noqa: F401
+from importlib import reload
 
-import config.const as const_mod  # noqa: F401
-import core.auth as auth_mod  # noqa: F401
-import core.logger as logger_mod  # noqa: F401
-import core.utils as utils_mod  # noqa: F401
-import staff.media_library as media_library_mod  # noqa: F401
-from config.const import MEDIA_LIB_FOLDER  #noqa: F401
-from config.settings import LOCAL_IMG_FOLDER, STAFF_DATA_FILE  # noqa: F401
-from core import auth, browser  # noqa: F401
+import config.const as const_mod
+import core.auth as auth_mod
+import core.logger as logger_mod
+import core.utils as utils_mod
+import staff.media_library as media_library_mod
+from config.const import MEDIA_LIB_FOLDER
+from config.settings import LOCAL_IMG_FOLDER, STAFF_DATA_FILE
+from core import auth, browser
 from core.runner import run_step
 from core.utils import (
     get_base_url,
 )
-from staff import staff_ops  # noqa: F401
-from staff.connect import connect_to_staff_tool  # noqa: F401 
-from staff.images import download_staff_images  # noqa: F401
-from staff.media_library import MediaLibrary  # noqa: F401
+from staff import staff_ops
+from staff.connect import connect_to_staff_tool
+from staff.images import download_staff_images
+from staff.media_library import MediaLibrary
 
 
 def refresh():
@@ -25,38 +25,6 @@ def refresh():
             reload(mod)
         except Exception as e:
             print(f"[refresh] Failed to reload {mod}: {e}")
-    from core.utils import get_base_url  # noqa: F401
-
-def expand_folder(driver):
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support import expected_conditions as EC
-    from selenium.webdriver.support.ui import WebDriverWait
-
-    from config.const import WAIT
-    from core.shadow_helpers import find_span_in_shadow, get_shadow_root
-    from core.utils import switch_to_iframe_by_xpath
-     
-
-    wait =  WebDriverWait(driver, WAIT.MEDIUM)
-    switch_to_iframe_by_xpath(driver, wait, '//*[@id="library-panel"]')
-    root = get_shadow_root(wait, '//*[@id="library-sidebar"]', 'nsemble-tree')
-    folder = find_span_in_shadow(wait, root, MEDIA_LIB_FOLDER.parent)
-
-    expand_btn_xpath = "./preceding-sibling::span[contains(@class, 'disclosure')]"
-    expand_btn = folder.find_element(By.XPATH, expand_btn_xpath)
-    # check if folder is expanded
-    expand_titles = expand_btn.find_elements(By.XPATH, ".//*[local-name()='svg']/*[local-name()='title']")
-
-    if expand_titles and "open" in expand_titles[0].get_attribute("textContent").strip().lower():
-        driver.switch_to.default_content()
-        return
-
-    driver.execute_script("arguments[0].scrollIntoView({block:'center'});", expand_btn)
-    wait.until(EC.element_to_be_clickable(expand_btn))
-    expand_btn.click()
-
-    driver.switch_to.default_content()
-
 
 def automation_script(dealer_id, live_staff_url):        
     with open(STAFF_DATA_FILE, "r", encoding="utf-8") as file:
