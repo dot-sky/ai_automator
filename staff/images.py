@@ -1,4 +1,5 @@
 import os
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -74,7 +75,7 @@ def get_image_file_name(staff_name, image_url):
     file_extension = os.path.splitext(parsed_url.path)[1] or ".jpg"
 
     # Create file path
-    name = staff_name.replace(" ", "")
+    name = re.sub(r'[^a-zA-Z0-9]','', staff_name)
     filename = f"{name}{file_extension}"
     return filename
 
